@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 <html lang="pt-PT" class="dark">
   <head>
@@ -10,7 +9,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- LeafletJS for Interactive Map -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
@@ -176,6 +175,7 @@
       const MagnifyingGlassIcon = (props) => h('svg', { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 20 20", fill: "currentColor", ...props }, h('path', { fillRule: "evenodd", d: "M9 3.5a5.5 5.5 0 1 0 0 11 5.5 5.5 0 0 0 0-11ZM2 9a7 7 0 1 1 12.452 4.391l3.328 3.329a.75.75 0 1 1-1.06 1.06l-3.329-3.328A7 7 0 0 1 2 9Z", clipRule: "evenodd" }));
       const BoltIcon = (props) => h('svg', { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 20 20", fill: "currentColor", ...props }, h('path', { d: "m3.182 17.818 13.636-13.636a1 1 0 0 0-1.414-1.414L1.768 16.404a1 1 0 0 0 1.414 1.414ZM2.5 10a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5Zm8 3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5Zm-5-11a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5Z" }));
       const CheckBadgeIcon = (props) => h('svg', { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 20 20", fill: "currentColor", ...props }, h('path', { fillRule: "evenodd", d: "M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z", clipRule: "evenodd" }));
+      const CreditCardIcon = (props) => h('svg', { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 20 20", fill: "currentColor", ...props }, h('path', { d: "M2.5 4.5a3 3 0 0 0-3 3v5a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3v-5a3 3 0 0 0-3-3h-15Z" }), h('path', { d: "M2.5 6.5a1 1 0 0 0-1 1v1.5a1.5 1.5 0 0 0 1.5 1.5h15a1.5 1.5 0 0 0 1.5-1.5v-1.5a1 1 0 0 0-1-1h-15Z" }));
       const GlobeAltIcon = (props) => h('svg', { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 20 20", fill: "currentColor", ...props }, h('path', { d: "M10 2a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0v-1.5A.75.75 0 0 1 10 2Z" }), h('path', { fillRule: "evenodd", d: "M10 20a10 10 0 1 0 0-20 10 10 0 0 0 0 20ZM9.25 4.75a.75.75 0 0 0-1.5 0v1.5a.75.75 0 0 0 1.5 0v-1.5ZM5.636 6.364a.75.75 0 0 0-1.06-1.06l-1.061 1.06a.75.75 0 0 0 1.06 1.06l1.06-1.06ZM3.75 9.25a.75.75 0 0 0 0 1.5h1.5a.75.75 0 0 0 0-1.5h-1.5Zm1.886 3.94a.75.75 0 0 0-1.06 1.06l1.06 1.061a.75.75 0 0 0 1.06-1.06l-1.06-1.061Zm4.614 3.06a.75.75 0 0 0 0-1.5v-1.5a.75.75 0 0 0-1.5 0v1.5a.75.75 0 0 0 1.5 0ZM13.636 14.364a.75.75 0 0 0 1.06 1.06l1.061-1.06a.75.75 0 0 0-1.06-1.06l-1.06 1.061Zm2.614-3.114a.75.75 0 0 0 0-1.5h-1.5a.75.75 0 0 0 0 1.5h1.5Zm-1.886-3.94a.75.75 0 0 0 1.06-1.06l-1.06-1.061a.75.75 0 0 0-1.06 1.06l1.06 1.061Zm-4.614-3.06a.75.75 0 0 0 0 1.5v1.5a.75.75 0 0 0 1.5 0v-1.5a.75.75 0 0 0-1.5 0Z", clipRule: "evenodd" }));
       const StarIcon = (props) => h('svg', { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 20 20", fill: "currentColor", ...props }, h('path', { fillRule: "evenodd", d: "M10.868 2.884c.321-.662 1.215-.662 1.536 0l1.82 3.755 4.137.602c.73.106 1.022.992.494 1.503l-2.994 2.918.707 4.12c.125.726-.638 1.282-1.296.953L10 15.175l-3.705 1.948c-.658.33-1.422-.227-1.296-.953l.707-4.12-2.994-2.918c-.528-.51-.236-1.397.494-1.503l4.137-.602 1.82-3.755Z", clipRule: "evenodd" }));
       const Spinner = () => h('div', { className: "animate-spin rounded-full h-8 w-8 border-b-2 border-white mx-auto" });
@@ -197,73 +197,105 @@
       const WashingMachineIcon = (props) => h('svg', { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", fill: "currentColor", ...props }, h('path', { fillRule: "evenodd", d: "M1.5 3.75A2.25 2.25 0 013.75 1.5h16.5A2.25 2.25 0 0122.5 3.75v16.5A2.25 2.25 0 0120.25 22.5H3.75A2.25 2.25 0 011.5 20.25V3.75zm3.75 2.25a.75.75 0 000 1.5h13.5a.75.75 0 000-1.5H5.25zM12 10.5a4.5 4.5 0 100 9 4.5 4.5 0 000-9zm-2.25 4.5a2.25 2.25 0 114.5 0 2.25 2.25 0 01-4.5 0z", clipRule: "evenodd" }));
       const CarIcon = (props) => h('svg', { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", fill: "currentColor", ...props }, h('path', { fillRule: "evenodd", d: "M3.283 6.042a.75.75 0 01.99-.073l3.901 2.25a.75.75 0 010 1.326l-3.9 2.252a.75.75 0 01-.99-.072L.73 7.373a.75.75 0 010-1.326l2.552-1.475zM8.25 7.5a.75.75 0 01.75-.75h12a.75.75 0 01.75.75v10.5a.75.75 0 01-.75.75h-12a.75.75 0 01-.75-.75V7.5z", clipRule: "evenodd" }));
       const ScissorsIcon = (props) => h('svg', { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", fill: "currentColor", ...props }, h('path', { fillRule: "evenodd", d: "M11.02 6.55a.75.75 0 011.06 0l3.25 3.25a.75.75 0 010 1.06l-3.25 3.25a.75.75 0 01-1.06-1.06l2.72-2.72-2.72-2.72a.75.75 0 010-1.06zM6.53 9.47a.75.75 0 010 1.06l-1.47 1.47a.75.75 0 01-1.06-1.06l1.47-1.47a.75.75 0 011.06 0zM12 1.5a.75.75 0 01.75.75v3a.75.75 0 01-1.5 0v-3a.75.75 0 01.75-.75zm0 15a.75.75 0 01.75.75v3a.75.75 0 01-1.5 0v-3a.75.75 0 01.75-.75z", clipRule: "evenodd" }));
-      const CalendarDaysIcon = (props) => h('svg', { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 20 20", fill: "currentColor", ...props }, h('path', { fillRule: "evenodd", d: "M5.75 2a.75.75 0 01.75.75V4h7V2.75a.75.75 0 011.5 0V4h.25A2.75 2.75 0 0118 6.75v8.5A2.75 2.75 0 0115.25 18H4.75A2.75 2.75 0 012 15.25v-8.5A2.75 2.75 0 014.75 4H5V2.75A.75.75 0 015.75 2zM4.5 8.5v6.75c0 .138.112.25.25.25h10.5a.25.25 0 00.25-.25V8.5h-11z", clipRule: "evenodd" }));
-      const MapPinIcon = (props) => h('svg', { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 20 20", fill: "currentColor", ...props }, h('path', { fillRule: "evenodd", d: "M9.69 18.933l.003.001C9.89 19.02 10 19 10 19s.11.02.308-.066l.002-.001.006-.003.018-.008a5.741 5.741 0 00.281-.14c.186-.1.4-.223.654-.369.255-.146.554-.315.856-.5.302-.185.623-.39 1.01-.634.387-.244.86-.546 1.445-1.011a8.87 8.87 0 002.42-3.86C17.947 8.822 18 8.434 18 8a8 8 0 10-16 0c0 .434.053.822.146 1.194a8.87 8.87 0 002.42 3.86c.584.465 1.058.767 1.445 1.01.387.245.708.45 1.01.635.302.185.6.354.856.5.254.146.468.269.654.369a5.741 5.741 0 00.281.14l.018.008.006.003zM10 11.25a3.25 3.25 0 100-6.5 3.25 3.25 0 000 6.5z", clipRule: "evenodd" }));
-      const TagIcon = (props) => h('svg', { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 20 20", fill: "currentColor", ...props }, h('path', { d: "M3.5 2A1.5 1.5 0 002 3.5v9A1.5 1.5 0 003.5 14h6.086a1.5 1.5 0 001.06-.44l5-5a1.5 1.5 0 000-2.12l-5-5A1.5 1.5 0 009.586 2H3.5zM6 6a1 1 0 100-2 1 1 0 000 2z" }));
-      const UserIcon = (props) => h('svg', { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 20 20", fill: "currentColor", ...props }, h('path', { fillRule: "evenodd", d: "M18 10a8 8 0 11-16 0 8 8 0 0116 0zM8.75 6.25a.75.75 0 00-1.5 0v3.5a.75.75 0 00.75.75h2a.75.75 0 000-1.5H9.5v-2.75z", clipRule: "evenodd" }));
-      const CheckIcon = (props) => h('svg', { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 20 20", fill: "currentColor", ...props }, h('path', { fillRule: "evenodd", d: "M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.052-.143z", clipRule: "evenodd" }));
-      const BankTransferIcon = (props) => h('svg', { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 20 20", fill: "currentColor", ...props }, h('path', { d: "M3.5 4.75A2.25 2.25 0 015.75 2.5h8.5A2.25 2.25 0 0116.5 4.75v10.5A2.25 2.25 0 0114.25 17.5h-8.5A2.25 2.25 0 013.5 15.25V4.75zM5.75 4A.75.75 0 005 4.75v10.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75V4.75a.75.75 0 00-.75-.75h-8.5z" }), h('path', { d: "M8 6.5a.5.5 0 01.5-.5h3a.5.5 0 010 1h-3a.5.5 0 01-.5-.5zM8.5 8a.5.5 0 000 1h3a.5.5 0 000-1h-3zM8 10.5a.5.5 0 01.5-.5h3a.5.5 0 010 1h-3a.5.5 0 01-.5-.5z" }));
-      const DirectDebitIcon = (props) => h('svg', { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 20 20", fill: "currentColor", ...props }, h('path', { d: "M10 2a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 0110 2zM15.472 4.528a.75.75 0 011.06 1.06l-1.5 1.5a.75.75 0 11-1.06-1.06l1.5-1.5zM17.25 10a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5a.75.75 0 01.75.75zM15.472 15.472a.75.75 0 11-1.06 1.06l-1.5-1.5a.75.75 0 011.06-1.06l1.5 1.5zM10 17.25a.75.75 0 01-.75.75v1.5a.75.75 0 01-1.5 0v-1.5a.75.75 0 01.75-.75zM4.528 15.472a.75.75 0 01-1.06-1.06l1.5-1.5a.75.75 0 011.06 1.06l-1.5 1.5zM2.75 10a.75.75 0 01.75-.75h1.5a.75.75 0 010 1.5h-1.5a.75.75 0 01-.75-.75zM4.528 4.528a.75.75 0 111.06-1.06l1.5 1.5a.75.75 0 01-1.06 1.06l-1.5-1.5z" }), h('path', { fillRule: "evenodd", d: "M10 18a8 8 0 100-16 8 8 0 000 16zm-2.25-8.25a.75.75 0 000 1.5h4.5a.75.75 0 000-1.5h-4.5z", clipRule: "evenodd" }));
-      // Official Logos as SVG Components
-      const VisaIcon = (props) => h('svg', { ...props, viewBox: "0 0 38 12", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, h('path', { d: "M24.736 11.52H22.372L25.324 0H27.688L24.736 11.52ZM17.14 0L14.164 7.6L13.78 6.048C13.204 3.864 11.692 2.832 9.94 2.832C9.844 2.832 5.092 2.832 5.092 2.832L3.244 11.52H5.68L7.036 5.232C7.324 3.984 8.236 3.528 9.1 3.528C9.22 3.528 9.652 3.528 9.652 3.528L11.5 11.52H13.864L18.124 0H17.14ZM33.604 11.52H36.124L33.916 0H31.708C30.94 0 30.34 0.48 29.98 1.152L26.188 11.52H28.628L29.32 9.456H32.692L33.016 11.52H33.604ZM30.412 7.584L31.54 4.056L32.116 7.584H30.412ZM2.956 0.192C2.476 0.408 2.044 0.6 1.636 0.768L1.612 0.816L0.64 1.08C0.304 1.2 0.076 1.536 0.076 1.92V2.136L0 2.232L0.028 2.256C0.484 2.52 1.564 3.024 2.14 3.24L2.86 3.528C2.908 3.552 2.956 3.576 3 3.6L3.028 3.624L3.772 5.088L4.852 11.52H7.216L12.556 0H2.956V0.192Z", fill: "#142688" }));
-      const MastercardIcon = (props) => h('svg', { ...props, viewBox: "0 0 38 24", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, h('circle', { cx: "12", cy: "12", r: "12", fill: "#EA001B" }), h('circle', { cx: "26", cy: "12", r: "12", fill: "#F79E1B" }), h('path', { d: "M22.997 12C22.997 18.075 18.075 23 12.001 23C10.598 23 9.255 22.746 8.01 22.285C11.973 19.832 14.802 15.65 15.54 11.03C15.932 8.356 15.63 5.63 14.73 3.118C16.59 1.764 18.82 1 21.25 1C24.498 1 27.35 2.65 29.21 5.16C25.53 6.84 23 9.9 23 12H22.997Z", fill: "#FF5F00" }));
-      const PayPalIcon = (props) => h('svg', { ...props, viewBox: "0 0 130 38", xmlns: "http://www.w3.org/2000/svg" }, h('g', null, h('path', { d: "M36.4,37.8H21.2c-2,0-3.6-0.6-4.9-1.9c-1.3-1.3-1.9-2.9-1.9-4.9c0-1.2,0.3-2.3,0.8-3.3c0.5-0.9,1.3-1.8,2.2-2.5 c1-0.7,2-1.3,3.2-1.8c1.2-0.5,2.3-0.9,3.2-1.2c0.9-0.3,1.7-0.6,2.2-0.8c0.5-0.2,0.8-0.5,0.8-0.8c0-0.5-0.4-0.9-1.2-0.9 c-0.6,0-1.4,0.1-2.3,0.4c-0.9,0.3-1.6,0.6-2.1,0.8L19.6,15c0.8-0.4,2-0.9,3.4-1.2c1.4-0.4,2.9-0.5,4.3-0.5c3.3,0,5.8,0.7,7.4,2 s2.4,3.2,2.4,5.6c0,1.1-0.2,2.1-0.5,3c-0.3,0.9-0.8,1.7-1.4,2.4c-0.6,0.7-1.4,1.3-2.3,1.8c-0.9,0.5-2,1-3.1,1.4 c-1.2,0.4-2.2,0.8-3,1.1c-0.8,0.3-1.3,0.5-1.5,0.7c-0.2,0.2-0.3,0.4-0.3,0.7c0,0.6,0.5,1.1,1.5,1.1c1.2,0,2.3-0.3,3.4-0.8 c1.1-0.5,2-1.1,2.7-1.7l1.9,3.4c-1,0.8-2.5,1.6-4.4,2.1C38.9,37.6,37.7,37.8,36.4,37.8z", fill: "#253B80" }), h('path', { d: "M64.2,37.8H49c-2,0-3.6-0.6-4.9-1.9c-1.3-1.3-1.9-2.9-1.9-4.9c0-1.2,0.3-2.3,0.8-3.3c0.5-0.9,1.3-1.8,2.2-2.5 c1-0.7,2-1.3,3.2-1.8c1.2-0.5,2.3-0.9,3.2-1.2c0.9-0.3,1.7-0.6,2.2-0.8c0.5-0.2,0.8-0.5,0.8-0.8c0-0.5-0.4-0.9-1.2-0.9 c-0.6,0-1.4,0.1-2.3,0.4c-0.9,0.3-1.6,0.6-2.1,0.8L46.4,15c0.8-0.4,2-0.9,3.4-1.2c1.4-0.4,2.9-0.5,4.3-0.5c3.3,0,5.8,0.7,7.4,2 c1.6,1.4,2.4,3.2,2.4,5.6c0,1.1-0.2,2.1-0.5,3c-0.3,0.9-0.8,1.7-1.4,2.4c-0.6,0.7-1.4,1.3-2.3,1.8c-0.9,0.5-2,1-3.1,1.4 c-1.2,0.4-2.2,0.8-3,1.1c-0.8,0.3-1.3,0.5-1.5,0.7c-0.2,0.2-0.3,0.4-0.3,0.7c0,0.6,0.5,1.1,1.5,1.1c1.2,0,2.3-0.3,3.4-0.8 c1.1-0.5,2-1.1,2.7-1.7l1.9,3.4c-1,0.8-2.5,1.6-4.4,2.1C66.6,37.6,65.4,37.8,64.2,37.8z", fill: "#253B80" }), h('path', { d: "M81,13.8h-8.7c-0.8,0-1.4,0.2-1.8,0.5s-0.6,0.8-0.6,1.4l-4,24.2c-0.1,0.7,0.1,1.2,0.6,1.6 c0.5,0.4,1.1,0.6,1.8,0.6h8.7c0.8,0,1.4-0.2,1.8-0.5c0.4-0.3,0.6-0.8,0.6-1.4l4-24.2c0.1-0.7-0.1-1.2-0.6-1.6 C82.1,13.9,81.5,13.8,81,13.8z M73,36.5l3-18.3l3,18.3H73z", fill: "#253B80" }), h('path', { d: "M102,13.3c-2.8,0-5,0.8-6.5,2.5c-1.5,1.7-2.2,3.9-2.2,6.6c0,2.6,0.7,4.8,2.2,6.5c1.5,1.7,3.7,2.6,6.5,2.6 c1,0,2-0.1,2.9-0.4s1.8-0.6,2.6-1.1l-1.9-3.4c-0.6,0.4-1.3,0.7-2.1,0.9c-0.8,0.2-1.6,0.3-2.5,0.3c-1.6,0-2.8-0.5-3.6-1.6 c-0.8-1-1.2-2.5-1.2-4.4c0-1.9,0.4-3.4,1.2-4.4c0.8-1,2-1.5,3.6-1.5c0.8,0,1.6,0.1,2.3,0.4c0.7,0.3,1.3,0.6,1.7,0.9l1.9-3.4 c-0.8-0.6-1.7-1-2.8-1.3C104,13.4,103,13.3,102,13.3z", fill: "#253B80" }), h('path', { d: "M124.9,13.8h-8.7c-0.8,0-1.4,0.2-1.8,0.5s-0.6,0.8-0.6,1.4l-4,24.2c-0.1,0.7,0.1,1.2,0.6,1.6 c0.5,0.4,1.1,0.6,1.8,0.6h8.7c0.8,0,1.4-0.2,1.8-0.5c0.4-0.3,0.6-0.8,0.6-1.4l4-24.2c0.1-0.7-0.1-1.2-0.6-1.6 S125.4,13.8,124.9,13.8z M116.8,36.5l3-18.3l3,18.3H116.8z", fill: "#253B80" }), h('path', { d: "M28.1,23.1c-0.9,0.8-2,1.4-3.2,1.8c-1.2,0.5-2.5,0.7-3.9,0.7c-2.2,0-4-0.5-5.3-1.4c-1.3-0.9-2-2.3-2-4.1 c0-2.3,1.3-4.1,3.8-5.3l7.9-3.8c0.8-0.4,1.2-0.8,1.2-1.3c0-0.4-0.3-0.8-0.9-1.1c-0.6-0.3-1.4-0.4-2.4-0.4c-1.3,0-2.8,0.2-4.4,0.7 l-2-7.1c1.8-0.6,3.8-1,5.9-1.2C24.4,0.1,26.1,0,27.5,0c3.8,0,6.7,0.9,8.5,2.8c1.8,1.9,2.7,4.4,2.7,7.6c0,2.5-0.8,4.6-2.3,6.4 c-1.6,1.8-3.8,3.1-6.8,4.1l-5.6,1.9c-0.6,0.2-0.9,0.5-0.9,0.8c0,0.4,0.2,0.7,0.7,0.9c0.5,0.2,1.1,0.3,1.8,0.3c1.4,0,2.9-0.3,4.6-1 l2,7.1C32.1,22.2,30.2,22.7,28.1,23.1z", fill: "#1295D8" })))
-      );
-      const MbWayIcon = (props) => h('svg', { ...props, fill: "none", viewBox: "0 0 100 100", xmlns: "http://www.w3.org/2000/svg" }, h('rect', { width: "100", height: "100", rx: "22", fill: "white" }), h('path', { d: "M69.5833 30.0833H30.4167C28.4355 30.0833 26.8333 31.6855 26.8333 33.6667V66.3333C26.8333 68.3145 28.4355 69.9167 30.4167 69.9167H69.5833C71.5645 69.9167 73.1667 68.3145 73.1667 66.3333V33.6667C73.1667 31.6855 71.5645 30.0833 69.5833 30.0833Z", stroke: "#D00014", strokeWidth: "5", strokeLinejoin: "round" }), h('path', { d: "M43.7917 43.125V56.875L36.625 50L43.7917 43.125Z", fill: "black" }), h('path', { d: "M51.2917 56.875H57.875L63.375 43.125H56.7917L54.0833 50.8333L51.2917 56.875Z", fill: "black" }));
 
-      // --- HELPER FUNCTIONS ---
-      const anonymizeName = (name) => {
-        return name.split(' ').map(word => {
-          if (word.length <= 2) return word;
-          return word.substring(0, 2) + '*'.repeat(word.length - 2);
-        }).join(' ');
-      };
-    
-      const formatMemberSince = (dateString) => {
-        const memberDate = new Date(dateString);
-        const now = new Date();
-        const diffTime = Math.abs(now - memberDate);
-        const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-        if (diffDays <= 30) return 'Membro Novo';
-        if (diffDays < 365) {
-          const months = Math.floor(diffDays / 30);
-          return `Membro há ${months} mes${months > 1 ? 'es' : ''}`;
-        }
-        const years = Math.floor(diffDays / 365);
-        return `Membro há ${years} ano${years > 1 ? 's' : ''}`;
-      };
 
       // --- CONSTANTES ---
-      const POSTAL_CODE_DATA = {
-        '1150-023': { freguesia: 'Arroios', concelho: 'Lisboa', distrito: 'Lisboa' }, '1000-001': { freguesia: 'Avenidas Novas', concelho: 'Lisboa', distrito: 'Lisboa' }, '4000-452': { freguesia: 'Cedofeita, Santo Ildefonso, Sé, Miragaia, São Nicolau e Vitória', concelho: 'Porto', distrito: 'Porto' }, '4400-001': { freguesia: 'Santa Marinha e São Pedro da Afurada', concelho: 'Vila Nova de Gaia', distrito: 'Porto' }, '3000-013': { freguesia: 'Sé Nova, Santa Cruz, Almedina e São Bartolomeu', concelho: 'Coimbra', distrito: 'Coimbra' }, '4700-001': { freguesia: 'Braga (Maximinos, Sé e Cividade)', concelho: 'Braga', distrito: 'Braga' }, '8000-001': { freguesia: 'Faro (Sé e São Pedro)', concelho: 'Faro', distrito: 'Faro' }, '2725-001': { freguesia: 'Algueirão-Mem Martins', concelho: 'Sintra', distrito: 'Lisboa' }, '9500-001': { freguesia: 'Ponta Delgada (São Sebastião)', concelho: 'Ponta Delgada', distrito: 'Açores' }, '9000-001': { freguesia: 'Funchal (Sé)', concelho: 'Funchal', distrito: 'Madeira' },
-      };
       const SERVICE_CATEGORIES = [
-        { name: 'Canalizadores', icon: WrenchScrewdriverIcon }, { name: 'Babysitters', icon: UserGroupIcon }, { name: 'Pedreiros', icon: HomeModernIcon }, { name: 'Advogados', icon: ScaleIcon }, { name: 'Pintores', icon: PaintBrushIcon }, { name: 'Mudanças', icon: TruckIcon }, { name: 'Eletricistas', icon: LightBulbIcon }, { name: 'Limpeza Doméstica', icon: SparklesIcon }, { name: 'Jardineiros', icon: BuildingStorefrontIcon }, { name: 'Carpinteiros', icon: BriefcaseIcon }, { name: 'Web Developers', icon: ComputerDesktopIcon }, { name: 'Contabilistas', icon: BriefcaseIcon }, { name: 'Serralheiros', icon: KeyIcon }, { name: 'Catering', icon: CakeIcon }, { name: 'Fotógrafos', icon: CameraIcon }, { name: 'Explicações', icon: AcademicCapIcon }, { name: 'Aulas de Música', icon: MusicalNoteIcon }, { name: 'Personal Trainers', icon: HeartIcon }, { name: 'Dog Walkers', icon: DogIcon }, { name: 'Reparação de Eletrodomésticos', icon: WrenchScrewdriverIcon }, { name: 'Montagem de Móveis', icon: WrenchScrewdriverIcon }, { name: 'Designers Gráficos', icon: PaintBrushIcon }, { name: 'Arquitetos', icon: HomeModernIcon }, { name: 'Decoradores de Interiores', icon: HomeModernIcon }, { name: 'Cuidados a Idosos', icon: HeartIcon }, { name: 'Traduções', icon: GlobeAltIcon }, { name: 'Organização de Eventos', icon: UserGroupIcon }, { name: 'Técnicos de AVAC', icon: BoltIcon }, { name: 'Estofadores', icon: BriefcaseIcon }, { name: 'Serviços de TI', icon: ComputerDesktopIcon }, { name: 'Reparação de Telemóveis', icon: ComputerDesktopIcon }, { name: 'Videógrafos', icon: CameraIcon }, { name: 'DJs', icon: MusicalNoteIcon }, { name: 'Segurança', icon: CheckBadgeIcon }, { name: 'Motoristas Particulares', icon: TruckIcon }, { name: 'Consultoria de Negócios', icon: BriefcaseIcon }, { name: 'Marketing Digital', icon: MagnifyingGlassIcon }, { name: 'Nutricionistas', icon: HeartIcon }, { name: 'Chef em Casa', icon: CakeIcon }, { name: 'Lavagem de Carros', icon: SparklesIcon }, { name: 'Controlo de Pragas', icon: BoltIcon }, { name: 'Remodelações', icon: HomeModernIcon }, { name: 'Isolamentos', icon: HomeModernIcon }, { name: 'Polimento de Pavimentos', icon: SparklesIcon }, { name: 'Reparação de Estores', icon: WrenchScrewdriverIcon }, { name: 'Aulas de Culinária', icon: CakeIcon }, { name: 'Apoio Administrativo', icon: BriefcaseIcon }, { name: 'Limpeza Predial', icon: BuildingStorefrontIcon }, { name: 'Lavandaria', icon: WashingMachineIcon }, { name: 'Desinfestação', icon: BoltIcon }, { name: 'Instalação de Ar Condicionado', icon: BoltIcon }, { name: 'Reparação de Telhados', icon: HomeModernIcon }, { name: 'Manicure/Pedicure', icon: SparklesIcon }, { name: 'Cabeleireiro ao Domicílio', icon: ScissorsIcon }, { name: 'Massagista', icon: HeartIcon }, { name: 'Animação de Festas', icon: CakeIcon }, { name: 'Florista', icon: SparklesIcon }, { name: 'Mecânico de Automóveis', icon: CarIcon }, { name: 'Reboque de Veículos', icon: TruckIcon }, { name: 'Gestão de Redes Sociais', icon: GlobeAltIcon }, { name: 'Aulas de Condução', icon: CarIcon }, { name: 'Aulas de Yoga', icon: HeartIcon }, { name: 'Aulas de Dança', icon: MusicalNoteIcon },
+        // Original
+        { name: 'Canalizadores', icon: WrenchScrewdriverIcon },
+        { name: 'Babysitters', icon: UserGroupIcon },
+        { name: 'Pedreiros', icon: HomeModernIcon },
+        { name: 'Advogados', icon: ScaleIcon },
+        { name: 'Pintores', icon: PaintBrushIcon },
+        { name: 'Mudanças', icon: TruckIcon },
+        // Expanded
+        { name: 'Eletricistas', icon: LightBulbIcon },
+        { name: 'Limpeza Doméstica', icon: SparklesIcon },
+        { name: 'Jardineiros', icon: BuildingStorefrontIcon },
+        { name: 'Carpinteiros', icon: BriefcaseIcon },
+        { name: 'Web Developers', icon: ComputerDesktopIcon },
+        { name: 'Contabilistas', icon: BriefcaseIcon },
+        { name: 'Serralheiros', icon: KeyIcon },
+        { name: 'Catering', icon: CakeIcon },
+        { name: 'Fotógrafos', icon: CameraIcon },
+        { name: 'Explicações', icon: AcademicCapIcon },
+        { name: 'Aulas de Música', icon: MusicalNoteIcon },
+        { name: 'Personal Trainers', icon: HeartIcon },
+        { name: 'Dog Walkers', icon: DogIcon },
+        { name: 'Reparação de Eletrodomésticos', icon: WrenchScrewdriverIcon },
+        { name: 'Montagem de Móveis', icon: WrenchScrewdriverIcon },
+        { name: 'Designers Gráficos', icon: PaintBrushIcon },
+        { name: 'Arquitetos', icon: HomeModernIcon },
+        { name: 'Decoradores de Interiores', icon: HomeModernIcon },
+        { name: 'Cuidados a Idosos', icon: HeartIcon },
+        { name: 'Traduções', icon: GlobeAltIcon },
+        { name: 'Organização de Eventos', icon: UserGroupIcon },
+        { name: 'Técnicos de AVAC', icon: BoltIcon },
+        { name: 'Estofadores', icon: BriefcaseIcon },
+        { name: 'Serviços de TI', icon: ComputerDesktopIcon },
+        { name: 'Reparação de Telemóveis', icon: ComputerDesktopIcon },
+        { name: 'Videógrafos', icon: CameraIcon },
+        { name: 'DJs', icon: MusicalNoteIcon },
+        { name: 'Segurança', icon: CheckBadgeIcon },
+        { name: 'Motoristas Particulares', icon: TruckIcon },
+        { name: 'Consultoria de Negócios', icon: BriefcaseIcon },
+        { name: 'Marketing Digital', icon: MagnifyingGlassIcon },
+        { name: 'Nutricionistas', icon: HeartIcon },
+        { name: 'Chef em Casa', icon: CakeIcon },
+        { name: 'Lavagem de Carros', icon: SparklesIcon },
+        { name: 'Controlo de Pragas', icon: BoltIcon },
+        { name: 'Remodelações', icon: HomeModernIcon },
+        { name: 'Isolamentos', icon: HomeModernIcon },
+        { name: 'Polimento de Pavimentos', icon: SparklesIcon },
+        { name: 'Reparação de Estores', icon: WrenchScrewdriverIcon },
+        { name: 'Aulas de Culinária', icon: CakeIcon },
+        { name: 'Apoio Administrativo', icon: BriefcaseIcon },
+        { name: 'Limpeza Predial', icon: BuildingStorefrontIcon },
+        { name: 'Lavandaria', icon: WashingMachineIcon },
+        { name: 'Desinfestação', icon: BoltIcon },
+        { name: 'Instalação de Ar Condicionado', icon: BoltIcon },
+        { name: 'Reparação de Telhados', icon: HomeModernIcon },
+        { name: 'Manicure/Pedicure', icon: SparklesIcon },
+        { name: 'Cabeleireiro ao Domicílio', icon: ScissorsIcon },
+        { name: 'Massagista', icon: HeartIcon },
+        { name: 'Animação de Festas', icon: CakeIcon },
+        { name: 'Florista', icon: SparklesIcon },
+        { name: 'Mecânico de Automóveis', icon: CarIcon },
+        { name: 'Reboque de Veículos', icon: TruckIcon },
+        { name: 'Gestão de Redes Sociais', icon: GlobeAltIcon },
+        { name: 'Aulas de Condução', icon: CarIcon },
+        { name: 'Aulas de Yoga', icon: HeartIcon },
+        { name: 'Aulas de Dança', icon: MusicalNoteIcon },
       ];
       const TESTIMONIALS = [
-          { id: 1, client: 'Cliente Anónimo #3451', service: 'Canalização Urgente', rating: 5, comment: 'Serviço impecável e super rápido! O profissional chegou em 30 minutos e resolveu o problema da minha fuga de água. Recomendo vivamente!', avatar: `https://picsum.photos/seed/client1/100/100` }, { id: 2, client: 'Cliente Anónimo #7823', service: 'Pintura de Apartamento', rating: 4.7, comment: 'A equipa foi muito profissional e o resultado final ficou excelente. Apenas um pequeno atraso no início, mas compensado pela qualidade.', avatar: `https://picsum.photos/seed/client2/100/100` }, { id: 3, client: 'Cliente Anónimo #9012', service: 'Babysitting', rating: 5, comment: 'A Maria foi fantástica com os meus filhos. Chegou a horas, foi muito atenciosa e as crianças adoraram-na. Senti-me completamente segura.', avatar: `https://picsum.photos/seed/client3/100/100` }, { id: 4, client: 'Cliente Anónimo #5548', service: 'Remodelação de Cozinha', rating: 4.9, comment: 'Projeto complexo, mas executado com grande mestria. A comunicação foi clara e o orçamento foi cumprido. Muito satisfeito.', avatar: `https://picsum.photos/seed/client4/100/100` },
+          { id: 1, client: 'Cliente Anónimo #3451', service: 'Canalização Urgente', rating: 5, comment: 'Serviço impecável e super rápido! O profissional chegou em 30 minutos e resolveu o problema da minha fuga de água. Recomendo vivamente!', avatar: `https://picsum.photos/seed/client1/100/100` },
+          { id: 2, client: 'Cliente Anónimo #7823', service: 'Pintura de Apartamento', rating: 4.7, comment: 'A equipa foi muito profissional e o resultado final ficou excelente. Apenas um pequeno atraso no início, mas compensado pela qualidade.', avatar: `https://picsum.photos/seed/client2/100/100` },
+          { id: 3, client: 'Cliente Anónimo #9012', service: 'Babysitting', rating: 5, comment: 'A Maria foi fantástica com os meus filhos. Chegou a horas, foi muito atenciosa e as crianças adoraram-na. Senti-me completamente segura.', avatar: `https://picsum.photos/seed/client3/100/100` },
+          { id: 4, client: 'Cliente Anónimo #5548', service: 'Remodelação de Cozinha', rating: 4.9, comment: 'Projeto complexo, mas executado com grande mestria. A comunicação foi clara e o orçamento foi cumprido. Muito satisfeito.', avatar: `https://picsum.photos/seed/client4/100/100` },
       ];
       const SERVICE_PROVIDERS = [
-        { id: 1, name: 'Canalizadores Toledo & Filhos', category: 'Canalizadores', rating: 4.9, jobsCompleted: 152, description: 'Especialista em reparações urgentes 24/7, desentupimentos e novas instalações de canalização.', zones: ['Porto', 'Vila Nova de Gaia', 'Matosinhos'], membershipLevel: 'VIP', memberSince: '2023-01-15T10:00:00Z', avatar: 'https://picsum.photos/seed/provider1/100/100' }, { id: 2, name: 'Eletro-Segura Instalações', category: 'Eletricistas', rating: 4.8, jobsCompleted: 213, description: 'Instalações elétricas certificadas e resolução de avarias com piquete de urgência.', zones: ['Lisboa', 'Amadora', 'Sintra'], membershipLevel: 'Profissional', memberSince: '2022-11-20T14:30:00Z', avatar: 'https://picsum.photos/seed/provider2/100/100' }, { id: 3, name: 'Pinturas & Remodelações Arte Nova', category: 'Pintores', rating: 5.0, jobsCompleted: 88, description: 'Pintura interior e exterior com acabamentos perfeitos e aconselhamento de cores.', zones: ['Faro', 'Loulé', 'Albufeira'], membershipLevel: 'Normal', memberSince: '2024-03-10T09:00:00Z', avatar: 'https://picsum.photos/seed/provider3/100/100' }, { id: 4, name: 'Limpezas Brilho Total', category: 'Limpeza Doméstica', rating: 4.7, jobsCompleted: 300, description: 'Serviços de limpeza profunda para residências, escritórios e condomínios.', zones: ['Coimbra', 'Figueira da Foz'], membershipLevel: 'Profissional', memberSince: '2023-05-01T08:00:00Z', avatar: 'https://picsum.photos/seed/provider4/100/100' }, { id: 5, name: 'Cantinho Feliz Babysitting', category: 'Babysitters', rating: 4.9, jobsCompleted: 120, description: 'Cuidado infantil de confiança, com educadoras certificadas, para a sua tranquilidade.', zones: ['Lisboa'], membershipLevel: 'VIP', memberSince: '2022-09-01T18:00:00Z', avatar: 'https://picsum.photos/seed/provider5/100/100' }, { id: 6, name: 'Madeira Mestra Carpintaria', category: 'Carpinteiros', rating: 4.6, jobsCompleted: 75, description: 'Móveis por medida, cozinhas, roupeiros e todo o tipo de reparações em madeira.', zones: ['Braga', 'Guimarães'], membershipLevel: 'Normal', memberSince: '2023-10-05T11:00:00Z', avatar: 'https://picsum.photos/seed/provider6/100/100' }, { id: 7, name: 'Jardim Sempre Verde', category: 'Jardineiros', rating: 4.8, jobsCompleted: 189, description: 'Manutenção de jardins e espaços verdes, sistemas de rega e poda de árvores.', zones: ['Sintra', 'Cascais', 'Oeiras'], membershipLevel: 'Profissional', memberSince: '2021-03-22T07:00:00Z', avatar: 'https://picsum.photos/seed/provider7/100/100' }, { id: 8, name: 'Advocacia Correia Mendes', category: 'Advogados', rating: 4.9, jobsCompleted: 50, description: 'Assessoria jurídica em direito civil, comercial e de família. Primeira consulta informativa.', zones: ['Lisboa', 'Porto'], membershipLevel: 'VIP', memberSince: '2024-05-20T16:00:00Z', avatar: 'https://picsum.photos/seed/provider8/100/100' }, { id: 9, name: 'Web Solutions PT', category: 'Web Developers', rating: 5.0, jobsCompleted: 45, description: 'Criação de websites modernos, lojas online e soluções de marketing digital à medida.', zones: ['Todo o país'], membershipLevel: 'Profissional', memberSince: '2023-08-11T12:00:00Z', avatar: 'https://picsum.photos/seed/provider9/100/100' }, { id: 10, name: 'Mudanças Relâmpago', category: 'Mudanças', rating: 4.7, jobsCompleted: 250, description: 'Serviço completo de mudanças residenciais e empresariais, com embalamento e desmontagem.', zones: ['Todo o país'], membershipLevel: 'Profissional', memberSince: '2020-02-18T13:45:00Z', avatar: 'https://picsum.photos/seed/provider10/100/100' },
+          { id: 1, anonymousName: 'Canalizador Verificado #8532', service: 'Canalizadores', rating: 4.9, jobsCompleted: 152, tagline: 'Especialista em reparações urgentes e desentupimentos.', avatar: 'https://picsum.photos/seed/provider1/100/100' },
+          { id: 2, anonymousName: 'Eletricista Verificado #7129', service: 'Eletricistas', rating: 4.8, jobsCompleted: 213, tagline: 'Instalações elétricas e resolução de avarias 24/7.', avatar: 'https://picsum.photos/seed/provider2/100/100' },
+          { id: 3, anonymousName: 'Pintor Verificado #3341', service: 'Pintores', rating: 5.0, jobsCompleted: 88, tagline: 'Pintura interior e exterior com acabamentos perfeitos.', avatar: 'https://picsum.photos/seed/provider3/100/100' },
+          { id: 4, anonymousName: 'Limpeza Verificada #5024', service: 'Limpeza Doméstica', rating: 4.7, jobsCompleted: 300, tagline: 'Serviços de limpeza profunda para residências e escritórios.', avatar: 'https://picsum.photos/seed/provider4/100/100' },
+          { id: 5, anonymousName: 'Babysitter Verificada #1087', service: 'Babysitters', rating: 4.9, jobsCompleted: 120, tagline: 'Cuidado infantil de confiança para a sua tranquilidade.', avatar: 'https://picsum.photos/seed/provider5/100/100' },
+          { id: 6, anonymousName: 'Carpinteiro Verificado #6521', service: 'Carpinteiros', rating: 4.6, jobsCompleted: 75, tagline: 'Móveis por medida e reparações em madeira.', avatar: 'https://picsum.photos/seed/provider6/100/100' },
+          { id: 7, anonymousName: 'Jardineiro Verificado #2298', service: 'Jardineiros', rating: 4.8, jobsCompleted: 189, tagline: 'Manutenção de jardins e espaços verdes com paixão.', avatar: 'https://picsum.photos/seed/provider7/100/100' },
+          { id: 8, anonymousName: 'Eletricista Verificado #4311', service: 'Eletricistas', rating: 4.5, jobsCompleted: 95, tagline: 'Reparações elétricas seguras e eficientes.', avatar: 'https://picsum.photos/seed/provider8/100/100' },
       ];
       const ALL_SERVICES = Array.from(new Set(SERVICE_CATEGORIES.map(s => s.name))).sort();
-      const QUICK_PRICE_ESTIMATES = { Canalizadores: { min: 50, max: 200 }, Eletricistas: { min: 60, max: 250 }, Pedreiros: { min: 150, max: 800 }, Pintores: { min: 200, max: 1000 }, Carpinteiros: { min: 80, max: 400 }, Jardineiros: { min: 40, max: 150 }, 'Limpeza Doméstica': { min: 30, max: 100 }, Babysitters: { min: 25, max: 80 }, 'Dog Walkers': { min: 15, max: 50 }, 'Reparação de Eletrodomésticos': { min: 45, max: 180 }, 'Montagem de Móveis': { min: 50, max: 200 }, Advogados: { min: 100, max: 500 }, Contabilistas: { min: 80, max: 300 }, 'Designers Gráficos': { min: 150, max: 600 }, 'Web Developers': { min: 250, max: 1500 }, 'Mudanças': { min: 100, max: 700 }, };
+      const QUICK_PRICE_ESTIMATES = { Canalizadores: { min: 50, max: 200 }, Eletricistas: { min: 60, max: 250 }, Pedreiros: { min: 150, max: 800 }, Pintores: { min: 200, max: 1000 }, Carpinteiros: { min: 80, max: 400 }, Jardineiros: { min: 40, max: 150 }, 'Limpeza Doméstica': { min: 30, max: 100 }, Babysitters: { min: 25, max: 80 }, 'Dog Walkers': { min: 15, max: 50 }, 'Reparação de Eletrodomésticos': { min: 45, max: 180 }, 'Montagem de Móveis': { min: 50, max: 200 }, Advogados: { min: 100, max: 500 }, Contabilistas: { min: 80, max: 300 }, 'Designers Gráficos': { min: 150, max: 600 }, 'Web Developers': { min: 250, max: 1500 }, 'Mudanças e Transportes': { min: 100, max: 700 }, };
       const MAP_MARKER_DATA = [
-        { city: 'Lisboa', lat: 38.7223, lng: -9.1393, service: 'Eletricistas' }, { city: 'Porto', lat: 41.1579, lng: -8.6291, service: 'Canalizadores' }, { city: 'Faro', lat: 37.0194, lng: -7.9304, service: 'Jardineiros' }, { city: 'Coimbra', lat: 40.2033, lng: -8.4103, service: 'Pintores' }, { city: 'Viseu', lat: 40.6575, lng: -7.9138, service: 'Carpinteiros' }, { city: 'Funchal', lat: 32.6669, lng: -16.9085, service: 'Limpeza Doméstica' }, { city: 'Ponta Delgada', lat: 37.7412, lng: -25.6756, service: 'Babysitters' }, { city: 'Braga', lat: 41.5454, lng: -8.4265, service: 'Remodelações' }, { city: 'Aveiro', lat: 40.6443, lng: -8.6455, service: 'Arquitetos' }, { city: 'Évora', lat: 38.5714, lng: -7.9079, service: 'Advogados' }
-      ];
-      const PRICING_PLANS = [
-        { name: 'Base', price: '15', features: ['Acesso a 3 Orçamentos/mês'], isPopular: false },
-        { name: 'Profissional', price: '25', features: ['Acesso a 6 Orçamentos/mês', 'Pode comprar pacotes extra'], isPopular: false },
-        { name: 'Profissional Plus', price: '35', features: ['Acesso a 10 Orçamentos/mês', 'Destaque nas pesquisas'], isPopular: true },
-        { name: 'VIP', price: '50', features: ['Acesso a 20 Orçamentos/mês', 'Destaque VIP', 'Suporte prioritário'], isPopular: false },
-        { name: 'Premium', price: 'Sob Consulta', features: ['Orçamentos ilimitados', 'Apoio Premium e Consultoria', 'Soluções personalizadas'], isPopular: false, isCustom: true },
-      ];
-      const PAYMENT_METHODS = [
-          { name: 'MB Way', icon: MbWayIcon },
-          { name: 'PayPal', icon: PayPalIcon },
-          { name: 'Visa', icon: VisaIcon },
-          { name: 'Mastercard', icon: MastercardIcon },
-          { name: 'Débito Direto', icon: DirectDebitIcon },
+        { city: 'Lisboa', lat: 38.7223, lng: -9.1393, service: 'Eletricistas' },
+        { city: 'Porto', lat: 41.1579, lng: -8.6291, service: 'Canalizadores' },
+        { city: 'Faro', lat: 37.0194, lng: -7.9304, service: 'Jardineiros' },
+        { city: 'Coimbra', lat: 40.2033, lng: -8.4103, service: 'Pintores' },
+        { city: 'Viseu', lat: 40.6575, lng: -7.9138, service: 'Carpinteiros' },
+        { city: 'Funchal', lat: 32.6669, lng: -16.9085, service: 'Limpeza Doméstica' },
+        { city: 'Ponta Delgada', lat: 37.7412, lng: -25.6756, service: 'Babysitters' },
+        { city: 'Braga', lat: 41.5454, lng: -8.4265, service: 'Remodelações' },
+        { city: 'Aveiro', lat: 40.6443, lng: -8.6455, service: 'Arquitetos' },
+        { city: 'Évora', lat: 38.5714, lng: -7.9079, service: 'Advogados' }
       ];
 
 
@@ -473,7 +505,7 @@ Forneça a sua resposta estritamente no formato JSON, seguindo o schema fornecid
         };
 
         const CompanyRegistrationForm = ({ onBack }) => {
-            const [formData, setFormData] = useState({ companyName: '', managerName: '', nif: '', address: '', contact: '', plan: 'profissional_plus' });
+            const [formData, setFormData] = useState({ companyName: '', managerName: '', nif: '', address: '', contact: '', plan: 'normal' });
             const [files, setFiles] = useState({ idDocument: null, addressProof: null, businessProof: null });
             const [errors, setErrors] = useState({});
             const [touched, setTouched] = useState({});
@@ -560,16 +592,14 @@ Forneça a sua resposta estritamente no formato JSON, seguindo o schema fornecid
                 return h('div', { className: "text-center p-8" },
                     h('h2', { className: "text-2xl font-bold text-stone-800 dark:text-white mb-4" }, "Registo Enviado!"),
                     h('p', { className: "text-stone-600 dark:text-stone-300" }, "Obrigado pelo seu registo. A sua candidatura será analisada e entraremos em contacto em breve."),
-                    h('p', { className: "text-sm text-stone-500 dark:text-stone-400 mt-2" }, "Lembre-se: os primeiros 3 meses são grátis (excluindo comissões de serviço).")
+                    h('p', { className: "text-sm text-stone-500 dark:text-stone-400 mt-2" }, "Lembre-se: os primeiros 6 meses são grátis (excluindo comissões de serviço).")
                 );
             }
         
             const planDetails = {
-                base: { title: 'Base', price: '15€' },
-                profissional: { title: 'Profissional', price: '25€' },
-                profissional_plus: { title: 'Profissional Plus', price: '35€' },
-                vip: { title: 'VIP', price: '50€' },
-                premium: { title: 'Premium', price: 'Sob Consulta'}
+                normal: { title: 'Normal', price: '10€', features: 'Acesso a pedidos' },
+                profissional: { title: 'Profissional', price: '20€', features: 'Destaque nas pesquisas' },
+                vip: { title: 'VIP', price: '35€', features: 'Acesso a todos os pedidos' }
             };
 
             return h('form', { onSubmit: handleSubmit, noValidate: true, className: "space-y-4" },
@@ -591,11 +621,16 @@ Forneça a sua resposta estritamente no formato JSON, seguindo o schema fornecid
                 ),
                 h('div', null,
                     h('h3', { className: "text-lg font-semibold text-stone-800 dark:text-white mb-2" }, "Escolha o seu Plano"),
-                    h('p', { className: "text-sm text-stone-500 dark:text-stone-400 mb-4" }, "Os primeiros 3 meses são grátis! Após o período de teste, será aplicada a mensalidade do plano escolhido."),
-                     h('div', { className: "w-full" },
-                        h('select', { name: "plan", value: formData.plan, onChange: handleChange, className: "w-full p-3 border border-stone-300 dark:border-slate-600 rounded-md bg-white dark:bg-slate-700 focus:ring-blue-500 focus:border-blue-500" },
-                           Object.keys(planDetails).map(planKey => h('option', { key: planKey, value: planKey }, `Plano ${planDetails[planKey].title} (${planDetails[planKey].price})`))
-                        )
+                    h('p', { className: "text-sm text-stone-500 dark:text-stone-400 mb-4" }, "Os primeiros 6 meses são grátis! Após o período de teste, será aplicada a mensalidade do plano escolhido."),
+                    h('div', { className: "grid grid-cols-1 md:grid-cols-3 gap-4" },
+                        Object.keys(planDetails).map(plan => h('label', { key: plan, className: "relative block" },
+                            h('input', { type: "radio", name: "plan", value: plan, checked: formData.plan === plan, onChange: handleChange, className: "sr-only peer" }),
+                            h('div', { className: "p-4 border rounded-lg cursor-pointer peer-checked:ring-2 peer-checked:ring-blue-500 peer-checked:border-blue-500 transition bg-white dark:bg-slate-700/50 border-stone-300 dark:border-slate-600" },
+                                h('h4', { className: "font-bold text-stone-800 dark:text-white" }, planDetails[plan].title),
+                                h('p', { className: "text-2xl font-bold text-blue-600 dark:text-blue-400" }, planDetails[plan].price, h('span', { className: "text-sm font-normal text-stone-500 dark:text-stone-400" }, "/mês + IVA")),
+                                h('p', { className: "text-sm text-stone-600 dark:text-stone-300 mt-1" }, planDetails[plan].features)
+                            )
+                        ))
                     )
                 ),
                 status === 'error' && h(FormStatus, { status: "error", message: "Ocorreu um erro ao enviar o seu registo. Por favor, tente novamente." }),
@@ -717,7 +752,7 @@ Forneça a sua resposta estritamente no formato JSON, seguindo o schema fornecid
 
       // --- MODAL DE PERFIL DO PRESTADOR ---
       const ProviderProfileModal = ({ isOpen, onClose, onSave }) => {
-        const [profile, setProfile] = useState({ category: '', zones: '', description: '' });
+        const [profile, setProfile] = useState({ service: '', hourlyRate: '', description: '' });
 
         const handleChange = (e) => {
             const { name, value } = e.target;
@@ -734,15 +769,15 @@ Forneça a sua resposta estritamente no formato JSON, seguindo o schema fornecid
                 h('h2', { className: "text-2xl font-bold text-center text-stone-800 dark:text-white" }, "Configure o seu Perfil Público"),
                 h('p', { className: "text-center text-stone-600 dark:text-stone-300" }, "Esta informação será visível para os clientes. Por favor, preencha com atenção."),
                 h('div', null,
-                    h('label', { htmlFor: "category-profile", className: "block text-sm font-medium text-stone-700 dark:text-stone-300 mb-1" }, "Qual é o seu serviço principal?"),
-                    h('select', { id: "category-profile", name: "category", value: profile.category, onChange: handleChange, required: true, className: "w-full p-3 border border-stone-300 dark:border-slate-600 rounded-md bg-white dark:bg-slate-700 focus:ring-blue-500 focus:border-blue-500" },
+                    h('label', { htmlFor: "service-profile", className: "block text-sm font-medium text-stone-700 dark:text-stone-300 mb-1" }, "Qual é o seu serviço principal?"),
+                    h('select', { id: "service-profile", name: "service", value: profile.service, onChange: handleChange, required: true, className: "w-full p-3 border border-stone-300 dark:border-slate-600 rounded-md bg-white dark:bg-slate-700 focus:ring-blue-500 focus:border-blue-500" },
                         h('option', { value: "" }, "Selecione o seu serviço..."),
                         ...ALL_SERVICES.map(s => h('option', { key: s, value: s }, s))
                     )
                 ),
                 h('div', null,
-                    h('label', { htmlFor: "zones", className: "block text-sm font-medium text-stone-700 dark:text-stone-300 mb-1" }, "Zonas de Atuação"),
-                    h('input', { type: 'text', id: 'zones', name: 'zones', value: profile.zones, onChange: handleChange, placeholder: 'Ex: Lisboa, Porto, Sintra (separado por vírgulas)', className: "w-full p-3 border border-stone-300 dark:border-slate-600 rounded-md bg-white dark:bg-slate-700 focus:ring-blue-500 focus:border-blue-500" })
+                    h('label', { htmlFor: "hourlyRate", className: "block text-sm font-medium text-stone-700 dark:text-stone-300 mb-1" }, "Preço médio por hora (com IVA)"),
+                    h('input', { type: 'number', id: 'hourlyRate', name: 'hourlyRate', value: profile.hourlyRate, onChange: handleChange, placeholder: 'Ex: 25', className: "w-full p-3 border border-stone-300 dark:border-slate-600 rounded-md bg-white dark:bg-slate-700 focus:ring-blue-500 focus:border-blue-500" })
                 ),
                 h('div', null,
                     h('label', { htmlFor: "description-profile", className: "block text-sm font-medium text-stone-700 dark:text-stone-300 mb-1" }, "Breve descrição sobre o seu trabalho"),
@@ -763,7 +798,7 @@ Forneça a sua resposta estritamente no formato JSON, seguindo o schema fornecid
       
       const Header = ({ theme, toggleTheme, onRegisterClick, onLoginClick, onLogout, currentUser }) => {
         const navLinks = [
-          { name: 'Quem Somos', href: '#quem-somos' }, { name: 'Serviços', href: '#serviços' }, { name: 'Profissionais', href: '#profissionais' }, { name: 'Planos', href: '#planos'}, { name: 'Como Funciona', href: '#como-funciona' }, { name: 'Contactos', href: '#contactos' },
+          { name: 'Quem Somos', href: '#quem-somos' }, { name: 'Serviços', href: '#serviços' }, { name: 'Como Funciona', href: '#como-funciona' }, { name: 'Contactos', href: '#contactos' },
         ];
         return h('header', { className: "sticky top-0 z-40 bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm shadow-md" },
           h('div', { className: "container mx-auto px-4 sm:px-6 lg:px-8" },
@@ -806,7 +841,7 @@ Forneça a sua resposta estritamente no formato JSON, seguindo o schema fornecid
         return h('section', { className: "py-20 lg:py-32 bg-stone-50 dark:bg-slate-800/50 relative overflow-hidden" },
             h('div', { className: "absolute inset-0 bg-cover bg-center bg-[url('https://picsum.photos/seed/lisbon/1920/1080')] opacity-10 dark:opacity-5" }),
             h('div', { className: "container mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10" },
-                h('h1', { className: "text-4xl md:text-5xl lg:text-6xl font-extrabold text-stone-900 dark:text-white leading-tight mb-4" },
+                h('h1', { className: "text-4xl md:text-5xl lg:text-6xl font-bold text-stone-900 dark:text-white leading-tight mb-4" },
                     "A solução para os seus problemas, ", h('span', { className: "text-blue-600 dark:text-blue-500" }, "agora"), "."
                 ),
                 h('p', { className: "max-w-3xl mx-auto text-lg text-stone-600 dark:text-stone-300 mb-8" },
@@ -818,7 +853,7 @@ Forneça a sua resposta estritamente no formato JSON, seguindo o schema fornecid
                         h('input', { type: "text", placeholder: "Qual serviço precisa? Ex: 'eletricista'", className: "w-full pl-10 pr-4 py-3 border-2 border-transparent focus:border-blue-500 bg-stone-100 dark:bg-slate-700 rounded-md focus:outline-none transition" })
                     ),
                     h('div', { className: "flex items-center gap-2 w-full md:w-auto" },
-                        h('a', { href: "#profissionais", className: "bg-blue-600 text-white font-semibold px-8 py-3 rounded-md hover:bg-blue-700 transition-transform hover:scale-105 w-full md:w-auto" }, "Procurar"),
+                        h('a', { href: "#pedir-orcamento", className: "bg-blue-600 text-white font-semibold px-8 py-3 rounded-md hover:bg-blue-700 transition-transform hover:scale-105 w-full md:w-auto" }, "Procurar"),
                         h('a', { href: "#pedir-orcamento", className: "bg-stone-200 dark:bg-slate-700 font-semibold px-8 py-3 rounded-md hover:bg-stone-300 dark:hover:bg-slate-600 transition-transform hover:scale-105 w-full md:w-auto" }, "Orçamento Grátis")
                     )
                 ),
@@ -838,7 +873,7 @@ Forneça a sua resposta estritamente no formato JSON, seguindo o schema fornecid
           
           const handleSelect = (serviceName) => {
             onServiceSelect(serviceName);
-            const quoteSection = document.getElementById('profissionais');
+            const quoteSection = document.getElementById('pedir-orcamento');
             if (quoteSection) {
               quoteSection.scrollIntoView({ behavior: 'smooth' });
             }
@@ -908,7 +943,7 @@ Forneça a sua resposta estritamente no formato JSON, seguindo o schema fornecid
                           h('div', { className: "space-y-6" },
                               h('div', null,
                                   h('h4', { className: "font-bold text-lg text-stone-900 dark:text-white" }, "Registo e Mensalidade"),
-                                  h('p', { className: "text-stone-600 dark:text-stone-300 mt-1" }, "Os primeiros ", h('span', { className: "font-semibold text-blue-600 dark:text-blue-400" }, "3 meses são grátis"), ". Após o período de teste, a subscrição é de apenas ", h('span', { className: "font-semibold" }, "15€/mês (+IVA)"), " para acesso ilimitado a pedidos de clientes.")
+                                  h('p', { className: "text-stone-600 dark:text-stone-300 mt-1" }, "Os primeiros ", h('span', { className: "font-semibold text-blue-600 dark:text-blue-400" }, "6 meses são grátis"), ". Após o período de teste, a subscrição é de apenas ", h('span', { className: "font-semibold" }, "10€/mês (+IVA)"), " para acesso ilimitado a pedidos de clientes.")
                               ),
                               h('div', null,
                                   h('h4', { className: "font-bold text-lg text-stone-900 dark:text-white" }, "Comissões de Serviço"),
@@ -964,137 +999,91 @@ Forneça a sua resposta estritamente no formato JSON, seguindo o schema fornecid
         );
     };
 
-      const ProviderListings = ({ preselectedCategory, onCategoryClear, selectedZoneFromMap, onZoneClear }) => {
+      const ProviderListings = () => {
           const [searchTerm, setSearchTerm] = useState('');
-          const [selectedCategory, setSelectedCategory] = useState('');
-          const [selectedZone, setSelectedZone] = useState('');
+          const [selectedService, setSelectedService] = useState('');
           const [minRating, setMinRating] = useState(0);
-          const [isExpanded, setIsExpanded] = useState(false);
 
-          useEffect(() => {
-            if(preselectedCategory) {
-              setSelectedCategory(preselectedCategory);
-              onCategoryClear();
-            }
-          }, [preselectedCategory, onCategoryClear]);
+          const topServices = useMemo(() => {
+              const serviceCounts = SERVICE_PROVIDERS.reduce((acc, provider) => {
+                  acc[provider.service] = (acc[provider.service] || 0) + 1;
+                  return acc;
+              }, {});
+              return Object.entries(serviceCounts).sort(([, a], [, b]) => b - a).slice(0, 6).map(([service]) => service);
+          }, []);
 
-          useEffect(() => {
-            if (selectedZoneFromMap) {
-              setSelectedZone(selectedZoneFromMap);
-            }
-          }, [selectedZoneFromMap]);
-
-          const availableCategories = useMemo(() => Array.from(new Set(SERVICE_PROVIDERS.map(p => p.category))).sort(), []);
-          const availableZones = useMemo(() => Array.from(new Set(SERVICE_PROVIDERS.flatMap(p => p.zones))).sort(), []);
+          const availableServices = useMemo(() => Array.from(new Set(SERVICE_PROVIDERS.map(p => p.service))).sort(), []);
 
           const filteredProviders = useMemo(() => {
               return SERVICE_PROVIDERS
-                  .filter(p => !selectedCategory || p.category === selectedCategory)
-                  .filter(p => !selectedZone || p.zones.includes(selectedZone) || p.zones.includes('Todo o país'))
+                  .filter(p => !selectedService || p.service === selectedService)
                   .filter(p => minRating <= 0 || p.rating >= minRating)
                   .filter(p => {
                       if (!searchTerm) return true;
                       const term = searchTerm.toLowerCase();
-                      return p.name.toLowerCase().includes(term) || p.category.toLowerCase().includes(term) || p.description.toLowerCase().includes(term) || p.zones.some(z => z.toLowerCase().includes(term));
+                      return p.anonymousName.toLowerCase().includes(term) || p.service.toLowerCase().includes(term) || p.tagline.toLowerCase().includes(term);
                   });
-          }, [searchTerm, selectedCategory, selectedZone, minRating]);
-
-          const providersToShow = isExpanded ? filteredProviders : filteredProviders.slice(0, 3);
-
-          const MembershipBadge = ({ level }) => {
-            const badgeStyles = {
-              VIP: { text: "VIP", icon: SparklesIcon, classes: "bg-yellow-100 text-yellow-800 dark:bg-yellow-900/50 dark:text-yellow-300" },
-              Profissional: { text: "Profissional", icon: CheckBadgeIcon, classes: "bg-blue-100 text-blue-800 dark:bg-blue-900/50 dark:text-blue-300" },
-              Normal: { text: "Normal", icon: UserIcon, classes: "bg-stone-100 text-stone-800 dark:bg-slate-700 dark:text-stone-300" },
-            };
-            const badge = badgeStyles[level] || badgeStyles.Normal;
-            return h('div', { className: `inline-flex items-center gap-1.5 px-2 py-1 rounded-full text-xs font-medium ${badge.classes}`},
-              h(badge.icon, { className: 'w-3.5 h-3.5' }),
-              badge.text
-            );
-          };
+          }, [searchTerm, selectedService, minRating]);
 
           const handleContact = (providerName) => {
-              alert(`A sua mensagem foi enviada para ${anonymizeName(providerName)}. Será contactado em breve para finalizar os detalhes.\n\n(Esta é uma demonstração. Nenhuma mensagem real foi enviada.)`);
+              alert(`A sua mensagem foi enviada para ${providerName}. Será contactado em breve para finalizar os detalhes.\n\n(Esta é uma demonstração. Nenhuma mensagem real foi enviada.)`);
           };
           
-          return h('section', { id: "profissionais", className: "py-16 sm:py-24" },
+          return h('section', { className: "py-16 sm:py-24" },
               h('div', { className: "container mx-auto px-4 sm:px-6 lg:px-8" },
                   h('div', { className: "text-center mb-12" },
                       h('h2', { className: "text-3xl md:text-4xl font-bold text-stone-900 dark:text-white" }, "Encontre o Profissional Ideal"),
                       h('p', { className: "mt-4 text-lg text-stone-600 dark:text-stone-300 max-w-2xl mx-auto" }, "A nossa rede de profissionais é verificada e avaliada para garantir a sua satisfação.")
                   ),
-                  h('div', { className: "mb-12 bg-white dark:bg-slate-800/50 p-6 rounded-lg shadow-md grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" },
-                      h('div', { className: "lg:col-span-2" },
-                          h('label', { htmlFor: "search", className: "block text-sm font-medium text-stone-700 dark:text-stone-300 mb-1" }, "Pesquisar por Palavra-Chave"),
-                          h('input', { type: "text", id: "search", value: searchTerm, onChange: e => setSearchTerm(e.target.value), placeholder: "Ex: 'urgente', 'reparação', 'Lisboa'...", className: "w-full p-3 border border-stone-300 dark:border-slate-600 rounded-md bg-white dark:bg-slate-700 focus:ring-blue-500 focus:border-blue-500" })
-                      ),
+                  h('div', { className: "mb-12 bg-white dark:bg-slate-800/50 p-6 rounded-lg shadow-md space-y-6" },
                       h('div', null,
-                          h('label', { htmlFor: "category-filter", className: "block text-sm font-medium text-stone-700 dark:text-stone-300 mb-1" }, "Categoria"),
-                          h('select', { id: "category-filter", value: selectedCategory, onChange: e => setSelectedCategory(e.target.value), className: "w-full p-3 border border-stone-300 dark:border-slate-600 rounded-md bg-white dark:bg-slate-700 focus:ring-blue-500 focus:border-blue-500" },
-                              h('option', { value: "" }, "Todas as Categorias"),
-                              ...availableCategories.map(cat => h('option', { key: cat, value: cat }, cat))
+                          h('label', { className: "block text-sm font-medium text-stone-700 dark:text-stone-300 mb-2" }, "Serviços Populares"),
+                          h('div', { className: "flex flex-wrap gap-2" },
+                              h('button', { onClick: () => setSelectedService(''), className: `px-4 py-2 text-sm font-semibold rounded-full transition-colors ${selectedService === '' ? 'bg-blue-600 text-white shadow' : 'bg-stone-200 dark:bg-slate-700 text-stone-800 dark:text-stone-200 hover:bg-stone-300 dark:hover:bg-slate-600'}` }, "Todos"),
+                              ...topServices.map(service => h('button', { key: service, onClick: () => setSelectedService(service), className: `px-4 py-2 text-sm font-semibold rounded-full transition-colors ${selectedService === service ? 'bg-blue-600 text-white shadow' : 'bg-stone-200 dark:bg-slate-700 text-stone-800 dark:text-stone-200 hover:bg-stone-300 dark:hover:bg-slate-600'}` }, service))
                           )
                       ),
-                       h('div', null,
-                          h('label', { htmlFor: "zone-filter", className: "block text-sm font-medium text-stone-700 dark:text-stone-300 mb-1" }, "Zona"),
-                          h('select', { 
-                            id: "zone-filter", 
-                            value: selectedZone, 
-                            onChange: e => {
-                                setSelectedZone(e.target.value);
-                                if(onZoneClear) onZoneClear();
-                            }, 
-                            className: "w-full p-3 border border-stone-300 dark:border-slate-600 rounded-md bg-white dark:bg-slate-700 focus:ring-blue-500 focus:border-blue-500" 
-                          },
-                              h('option', { value: "" }, "Todas as Zonas"),
-                              ...availableZones.map(zone => h('option', { key: zone, value: zone }, zone))
+                      h('div', { className: "grid grid-cols-1 md:grid-cols-3 gap-6" },
+                          h('div', null,
+                              h('label', { htmlFor: "search", className: "block text-sm font-medium text-stone-700 dark:text-stone-300" }, "Pesquisar por Palavra-Chave"),
+                              h('input', { type: "text", id: "search", value: searchTerm, onChange: e => setSearchTerm(e.target.value), placeholder: "Ex: 'urgente', 'reparação'...", className: "mt-1 w-full p-3 border border-stone-300 dark:border-slate-600 rounded-md bg-white dark:bg-slate-700 focus:ring-blue-500 focus:border-blue-500" })
+                          ),
+                          h('div', null,
+                              h('label', { htmlFor: "service-filter", className: "block text-sm font-medium text-stone-700 dark:text-stone-300" }, "Ou Selecionar Outro Serviço"),
+                              h('select', { id: "service-filter", value: selectedService, onChange: e => setSelectedService(e.target.value), className: "mt-1 w-full p-3 border border-stone-300 dark:border-slate-600 rounded-md bg-white dark:bg-slate-700 focus:ring-blue-500 focus:border-blue-500" },
+                                  h('option', { value: "" }, "Todos os Serviços"),
+                                  ...availableServices.map(service => h('option', { key: service, value: service }, service))
+                              )
+                          ),
+                          h('div', null,
+                              h('label', { htmlFor: "rating-filter", className: "block text-sm font-medium text-stone-700 dark:text-stone-300" }, "Avaliação Mínima"),
+                              h('select', { id: "rating-filter", value: minRating, onChange: e => setMinRating(Number(e.target.value)), className: "mt-1 w-full p-3 border border-stone-300 dark:border-slate-600 rounded-md bg-white dark:bg-slate-700 focus:ring-blue-500 focus:border-blue-500" },
+                                  h('option', { value: "0" }, "Todas"), h('option', { value: "4.5" }, "4.5+ Estrelas"), h('option', { value: "4" }, "4+ Estrelas"), h('option', { value: "3" }, "3+ Estrelas")
+                              )
                           )
                       )
                   ),
-                  h('div', { className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" },
+                  h('div', { className: "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8" },
                       filteredProviders.length > 0 ?
-                          providersToShow.map(provider => h('div', { key: provider.id, className: "bg-white dark:bg-slate-800 rounded-lg shadow-lg overflow-hidden flex flex-col transform hover:-translate-y-2 transition-transform duration-300" },
-                              h('div', { className: "p-6" },
-                                h('div', { className: "flex items-start justify-between mb-4" },
-                                  h('div', { className: "flex items-start gap-4" },
-                                    h('img', { src: provider.avatar, alt: `Avatar de ${provider.name}`, className: "w-16 h-16 rounded-full border-4 border-stone-200 dark:border-slate-700 object-cover" }),
-                                    h('div', null,
-                                      h('h3', { className: "font-bold text-lg text-stone-800 dark:text-white" }, anonymizeName(provider.name)),
-                                      h('div', { className: "flex items-center space-x-1 mt-1" },
-                                        h(StarIcon, { className: "w-5 h-5 text-yellow-400" }),
-                                        h('span', { className: "font-bold text-stone-700 dark:text-stone-200" }, provider.rating.toFixed(1)),
-                                        h('span', { className: "text-sm text-stone-500 dark:text-stone-400" }, `(${provider.jobsCompleted})`)
-                                      )
-                                    )
-                                  ),
-                                  h(MembershipBadge, { level: provider.membershipLevel })
-                                ),
-                                h('p', { className: "text-stone-600 dark:text-stone-300 text-sm mb-4" }, provider.description),
-                                h('div', { className: 'space-y-3 text-sm' },
-                                  h('div', { className: 'flex items-center gap-2 text-stone-600 dark:text-stone-400' }, h(TagIcon, {className: 'w-4 h-4 text-stone-400 dark:text-stone-500'}), h('strong', {className: 'text-stone-700 dark:text-stone-300'}, 'Categoria:'), provider.category),
-                                  h('div', { className: 'flex items-center gap-2 text-stone-600 dark:text-stone-400' }, h(MapPinIcon, {className: 'w-4 h-4 text-stone-400 dark:text-stone-500'}), h('strong', {className: 'text-stone-700 dark:text-stone-300'}, 'Zonas:'), provider.zones.join(', ')),
-                                  h('div', { className: 'flex items-center gap-2 text-stone-600 dark:text-stone-400' }, h(CalendarDaysIcon, {className: 'w-4 h-4 text-stone-400 dark:text-stone-500'}), h('strong', {className: 'text-stone-700 dark:text-stone-300'}, 'Membro:'), formatMemberSince(provider.memberSince))
-                                )
+                          filteredProviders.map(provider => h('div', { key: provider.id, className: "bg-white dark:bg-slate-800 rounded-lg shadow-lg p-6 flex flex-col text-center items-center transform hover:-translate-y-2 transition-transform duration-300" },
+                              h('img', { src: provider.avatar, alt: `Avatar de ${provider.anonymousName}`, className: "w-24 h-24 rounded-full mb-4 border-4 border-stone-200 dark:border-slate-700 object-cover" }),
+                              h('h3', { className: "font-bold text-lg text-stone-800 dark:text-white" }, provider.anonymousName),
+                              h('p', { className: "text-sm text-blue-600 dark:text-blue-400 font-semibold mb-2" }, provider.service),
+                              h('div', { className: "flex items-center space-x-1 mb-3" },
+                                  h(StarIcon, { className: "w-5 h-5 text-yellow-400" }),
+                                  h('span', { className: "font-bold text-stone-700 dark:text-stone-200" }, provider.rating.toFixed(1)),
+                                  h('span', { className: "text-sm text-stone-500 dark:text-stone-400" }, `(${provider.jobsCompleted} serviços)`)
                               ),
-                              h('div', { className: "mt-auto p-4 bg-stone-50 dark:bg-slate-800/50 flex gap-2" },
-                                h('a', { href: "#pedir-orcamento", className: "flex-1 text-center bg-blue-600 text-white px-4 py-2 rounded-md font-semibold hover:bg-blue-700 transition-colors text-sm" }, "Pedir Orçamento"),
-                                h('button', { onClick: () => handleContact(provider.name), className: "flex-1 text-center bg-stone-200 dark:bg-slate-700 text-stone-800 dark:text-stone-200 px-4 py-2 rounded-md font-semibold hover:bg-stone-300 dark:hover:bg-slate-600 transition-colors text-sm" }, "Contactar")
+                              h('p', { className: "text-stone-600 dark:text-stone-300 text-sm italic mb-4 flex-grow" }, `"${provider.tagline}"`),
+                              h('div', { className: "w-full flex flex-col space-y-2" },
+                                  h('a', { href: "#pedir-orcamento", className: "w-full bg-blue-600 text-white px-4 py-2 rounded-md font-semibold hover:bg-blue-700 transition-colors text-sm" }, "Pedir Orçamento"),
+                                  h('button', { onClick: () => handleContact(provider.anonymousName), className: "w-full bg-stone-200 dark:bg-slate-700 text-stone-800 dark:text-stone-200 px-4 py-2 rounded-md font-semibold hover:bg-stone-300 dark:hover:bg-slate-600 transition-colors text-sm" }, "Contactar")
                               )
                           ))
                           : h('div', { className: "col-span-full text-center py-12" },
                               h('h3', { className: "text-xl font-semibold text-stone-700 dark:text-stone-300" }, "Nenhum prestador encontrado"),
                               h('p', { className: "text-stone-500 dark:text-stone-400 mt-2" }, "Tente ajustar os seus filtros de pesquisa.")
                           )
-                  ),
-                  filteredProviders.length > 3 && h('div', { className: "text-center mt-12" },
-                    h('button', { 
-                        onClick: () => setIsExpanded(!isExpanded), 
-                        className: "bg-stone-200 dark:bg-slate-700 text-stone-800 dark:text-stone-200 px-6 py-3 rounded-md font-semibold hover:bg-stone-300 dark:hover:bg-slate-600 transition-colors flex items-center gap-2 mx-auto" 
-                      },
-                      isExpanded ? 'Ver Menos' : 'Ver Mais Profissionais',
-                      isExpanded ? h(ChevronUpIcon, { className: "w-5 h-5" }) : h(ChevronDownIcon, { className: "w-5 h-5" })
-                    )
                   )
               )
           );
@@ -1106,52 +1095,13 @@ Forneça a sua resposta estritamente no formato JSON, seguindo o schema fornecid
           const [loading, setLoading] = useState(false);
           const [error, setError] = useState(null);
           const [isSubmitted, setIsSubmitted] = useState(false);
-          const [postalCodeDetails, setPostalCodeDetails] = useState(null);
-          const [postalCodeLoading, setPostalCodeLoading] = useState(false);
-          const [postalCodeError, setPostalCodeError] = useState(null);
-          const debounceTimeoutRef = useRef(null);
           
           useEffect(() => {
             if (preselectedService) {
               setFormData(prev => ({ ...prev, service: preselectedService }));
               onFormInteracted();
             }
-          }, [preselectedService, onFormInteracted]);
-
-          useEffect(() => {
-            const postalCode = formData.location.trim();
-            if (debounceTimeoutRef.current) {
-                clearTimeout(debounceTimeoutRef.current);
-            }
-        
-            if (/^\d{4}-\d{3}$/.test(postalCode)) {
-                setPostalCodeLoading(true);
-                setPostalCodeError(null);
-                setPostalCodeDetails(null);
-        
-                debounceTimeoutRef.current = setTimeout(() => {
-                    const details = POSTAL_CODE_DATA[postalCode];
-                    if (details) {
-                        setPostalCodeDetails(details);
-                        setPostalCodeError(null);
-                    } else {
-                        setPostalCodeError('Código Postal não encontrado.');
-                        setPostalCodeDetails(null);
-                    }
-                    setPostalCodeLoading(false);
-                }, 300);
-            } else {
-                setPostalCodeDetails(null);
-                setPostalCodeError(null);
-                setPostalCodeLoading(false);
-            }
-        
-            return () => {
-                if (debounceTimeoutRef.current) {
-                    clearTimeout(debounceTimeoutRef.current);
-                }
-            };
-          }, [formData.location]);
+          }, [preselectedService]);
 
           const handleChange = (e) => {
               const { name, value } = e.target;
@@ -1183,11 +1133,7 @@ Forneça a sua resposta estritamente no formato JSON, seguindo o schema fornecid
               }
 
               try {
-                  const detailedLocation = postalCodeDetails 
-                    ? `${postalCodeDetails.freguesia}, ${postalCodeDetails.concelho}, ${postalCodeDetails.distrito}`
-                    : formData.location;
-                  const submissionData = { ...formData, location: detailedLocation };
-                  const result = await getAiEstimate(submissionData);
+                  const result = await getAiEstimate(formData);
                   setEstimate(result);
               } catch (err) {
                   setError(err.message || "Não foi possível obter uma estimativa. Por favor, tente novamente mais tarde.");
@@ -1228,24 +1174,8 @@ Forneça a sua resposta estritamente no formato JSON, seguindo o schema fornecid
                               h('select', { id: "urgency", name: "urgency", value: formData.urgency, onChange: handleChange, required: true, className: "w-full p-3 border border-stone-300 dark:border-slate-600 rounded-md bg-white dark:bg-slate-700 focus:ring-blue-500 focus:border-blue-500" }, h('option', { value: "normal" }, "Agendamento Normal"), h('option', { value: "hoje" }, "Hoje"), h('option', { value: "urgente" }, "Urgente (Próximas horas)"))
                           ),
                           h('div', null,
-                            h('label', { htmlFor: "location", className: "block text-sm font-medium text-stone-700 dark:text-stone-300 mb-1" }, "Localização (Código Postal)"),
-                            h('div', { className: 'relative' },
-                              h('input', { 
-                                type: "text", 
-                                id: "location", 
-                                name: "location", 
-                                value: formData.location, 
-                                onChange: handleChange, 
-                                required: true, 
-                                className: "w-full p-3 border border-stone-300 dark:border-slate-600 rounded-md bg-white dark:bg-slate-700 focus:ring-blue-500 focus:border-blue-500",
-                                placeholder: "Ex: 1150-023" 
-                              }),
-                              postalCodeLoading && h('div', { className: 'absolute top-1/2 right-3 -translate-y-1/2' }, h('div', { className: 'animate-spin rounded-full h-5 w-5 border-b-2 border-blue-500' }))
-                            ),
-                            h('div', { className: 'mt-2 text-sm h-5' }, 
-                                postalCodeError && h('p', { className: 'text-red-500 animate-fade-in' }, postalCodeError),
-                                postalCodeDetails && h('p', { className: 'text-green-600 dark:text-green-400 font-semibold animate-fade-in' }, `${postalCodeDetails.freguesia}, ${postalCodeDetails.concelho}`)
-                            )
+                              h('label', { htmlFor: "location", className: "block text-sm font-medium text-stone-700 dark:text-stone-300 mb-1" }, "Localização (Cidade/Código Postal)"),
+                              h('input', { type: "text", id: "location", name: "location", value: formData.location, onChange: handleChange, required: true, className: "w-full p-3 border border-stone-300 dark:border-slate-600 rounded-md bg-white dark:bg-slate-700 focus:ring-blue-500 focus:border-blue-500" })
                           ),
                           h('div', null,
                               h('label', { htmlFor: "description", className: "block text-sm font-medium text-stone-700 dark:text-stone-300 mb-1" }, "Descrição Detalhada"),
@@ -1312,80 +1242,36 @@ Forneça a sua resposta estritamente no formato JSON, seguindo o schema fornecid
           );
       };
 
-      const AdBanner = ({ onRegisterClick }) => {
+      const AdBanner = () => {
           return h('section', { className: "py-12 bg-stone-100 dark:bg-slate-800/50" },
               h('div', { className: "container mx-auto px-4 sm:px-6 lg:px-8" },
                   h('div', { className: "bg-gradient-to-r from-blue-600 to-indigo-700 dark:from-blue-700 dark:to-indigo-800 rounded-lg shadow-xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8" },
                       h('div', { className: "text-white text-center md:text-left" },
                           h('h2', { className: "text-3xl font-bold" }, "É um Profissional ou Empresa?"),
-                          h('p', { className: "mt-2 text-lg opacity-90 max-w-2xl" }, "Aumente a sua visibilidade e alcance milhares de novos clientes. Junte-se à nossa rede.")
+                          h('p', { className: "mt-2 text-lg opacity-90 max-w-2xl" }, "Aumente a sua visibilidade e alcance milhares de novos clientes. Anuncie na nossa plataforma.")
                       ),
-                      h('div', { className: "flex-shrink-0" }, h('button', { onClick: onRegisterClick, className: "bg-white text-blue-700 font-bold py-3 px-8 rounded-full hover:bg-slate-100 transition-transform hover:scale-105 shadow-md" }, "Registar Agora"))
+                      h('div', { className: "flex-shrink-0" }, h('button', { className: "bg-white text-blue-700 font-bold py-3 px-8 rounded-full hover:bg-slate-100 transition-transform hover:scale-105 shadow-md" }, "Publicitar Agora"))
                   )
               )
           );
       };
 
-      const PricingPlans = ({ onRegisterClick }) => {
-        return h('section', { id: "planos", className: "py-16 sm:py-24 bg-stone-100 dark:bg-slate-800/50" },
-          h('div', { className: "container mx-auto px-4 sm:px-6 lg:px-8" },
-            h('div', { className: "text-center mb-12" },
-              h('h2', { className: "text-3xl md:text-4xl font-extrabold text-stone-900 dark:text-white tracking-tight" }, "Planos de Subscrição para Profissionais"),
-              h('p', { className: "mt-4 text-lg text-stone-600 dark:text-stone-300 max-w-2xl mx-auto" }, "Escolha o plano que melhor se adapta ao crescimento do seu negócio.")
-            ),
-            h('div', { className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 items-end" },
-              PRICING_PLANS.map(plan => h('div', { 
-                  key: plan.name, 
-                  className: `bg-white dark:bg-slate-800 rounded-lg shadow-lg p-8 text-center flex flex-col relative transition-all duration-300 ${plan.isPopular ? 'border-2 border-blue-600 dark:border-blue-500 scale-105 z-10' : 'border border-transparent'}`
-              },
-                  plan.isPopular && h('div', { className: 'absolute -top-4 left-1/2 -translate-x-1/2 bg-blue-600 text-white text-xs font-bold px-4 py-1 rounded-full' }, "MAIS POPULAR"),
-                  h('h3', { className: "text-2xl font-bold text-stone-800 dark:text-white" }, `Plano ${plan.name}`),
-                  h('div', { className: "my-6" },
-                      plan.isCustom ?
-                          h('p', { className: "text-3xl font-bold text-stone-900 dark:text-white" }, plan.price) :
-                          h('p', { className: "text-5xl font-bold text-stone-900 dark:text-white" }, "€", plan.price, h('span', { className: 'text-base font-normal text-stone-500 dark:text-stone-400' }, '/mês + IVA'))
-                  ),
-                  h('ul', { className: "space-y-4 text-stone-600 dark:text-stone-300 flex-grow mb-8" },
-                      plan.features.map(feature => h('li', { key: feature, className: 'flex items-center justify-center gap-2' },
-                          h(CheckIcon, { className: 'w-5 h-5 text-green-500 flex-shrink-0' }),
-                          h('span', null, feature)
-                      ))
-                  ),
-                  h('button', { 
-                      onClick: onRegisterClick,
-                      className: `w-full py-3 rounded-lg font-semibold transition ${plan.isPopular ? 'bg-blue-600 text-white hover:bg-blue-700' : (plan.isCustom ? 'bg-slate-600 text-white hover:bg-slate-700' : 'bg-stone-200 dark:bg-slate-700 text-stone-800 dark:text-stone-200 hover:bg-stone-300 dark:hover:bg-slate-600')}` 
-                  }, plan.isCustom ? 'Contacte-nos' : 'Aderir ao Plano')
-              ))
-            ),
-            h('div', { className: 'mt-16 text-center' },
-              h('h3', { className: 'text-xl font-semibold text-stone-800 dark:text-white mb-6' }, 'Métodos de Pagamento Aceites'),
-              h('div', { className: 'flex justify-center items-center flex-wrap gap-x-6 gap-y-4' },
-                  PAYMENT_METHODS.map(method => h('div', { key: method.name, className: 'flex flex-col items-center gap-2 text-stone-600 dark:text-stone-300' },
-                      h(method.icon, { className: 'h-10' }),
-                      h('span', { className: 'text-sm font-medium' }, method.name)
-                  ))
-              )
-            ),
-            h('div', { className: 'mt-12 max-w-4xl mx-auto text-center text-sm text-stone-500 dark:text-stone-400 bg-stone-50 dark:bg-slate-800 p-6 rounded-lg' },
-              h('p', { className: 'font-bold mb-2' }, 'Nota Importante:'),
-              h('p', null, 'Os primeiros 3 meses são grátis, com um período de fidelização de 24 meses. Todos os planos excluem a comissão de serviço cobrada pela plataforma sobre os trabalhos concluídos com sucesso.')
-            )
-          )
-        );
-      };
-
-      const MapSection = ({ onCitySelect }) => {
+      const MapSection = () => {
         const mapContainerRef = useRef(null);
         const mapInstanceRef = useRef(null);
         const blinkingMarkersRef = useRef([]);
         const userLocationMarkerRef = useRef(null);
-        const selectedCityMarkerRef = useRef(null);
     
         const [isLocating, setIsLocating] = useState(false);
         const [userLocationFound, setUserLocationFound] = useState(false);
     
         const MAJOR_CITIES = [
-            { name: 'Lisboa', lat: 38.7223, lng: -9.1393, zoom: 12 }, { name: 'Porto', lat: 41.1579, lng: -8.6291, zoom: 12 }, { name: 'Viseu', lat: 40.6575, lng: -7.9138, zoom: 13 }, { name: 'Beja', lat: 38.0151, lng: -7.8633, zoom: 13 }, { name: 'Braga', lat: 41.5454, lng: -8.4265, zoom: 12 }, { name: 'Faro', lat: 37.0194, lng: -7.9304, zoom: 13 }
+            { name: 'Lisboa', lat: 38.7223, lng: -9.1393, zoom: 12 },
+            { name: 'Porto', lat: 41.1579, lng: -8.6291, zoom: 12 },
+            { name: 'Viseu', lat: 40.6575, lng: -7.9138, zoom: 13 },
+            { name: 'Beja', lat: 38.0151, lng: -7.8633, zoom: 13 },
+            { name: 'Braga', lat: 41.5454, lng: -8.4265, zoom: 12 },
+            { name: 'Faro', lat: 37.0194, lng: -7.9304, zoom: 13 }
         ];
     
         const initializeMap = (container) => {
@@ -1411,7 +1297,7 @@ Forneça a sua resposta estritamente no formato JSON, seguindo o schema fornecid
             const PopupContent = () => {
                 const handleClick = (e) => {
                     e.preventDefault();
-                    document.getElementById('profissionais')?.scrollIntoView({ behavior: 'smooth' });
+                    document.getElementById('pedir-orcamento')?.scrollIntoView({ behavior: 'smooth' });
                     map.closePopup();
                 };
                 
@@ -1470,36 +1356,9 @@ Forneça a sua resposta estritamente no formato JSON, seguindo o schema fornecid
         }, []);
     
         const handleCityClick = (city) => {
-            const map = mapInstanceRef.current;
-            if (!map) return;
-
-            if (selectedCityMarkerRef.current) {
-                map.removeLayer(selectedCityMarkerRef.current);
+            if (mapInstanceRef.current) {
+                mapInstanceRef.current.flyTo([city.lat, city.lng], city.zoom || 12);
             }
-
-            map.flyTo([city.lat, city.lng], city.zoom || 12);
-
-            const popupNode = document.createElement('div');
-            const PopupContent = () => {
-                const handleViewServices = () => {
-                    onCitySelect(city.name);
-                    document.getElementById('profissionais')?.scrollIntoView({ behavior: 'smooth' });
-                    map.closePopup();
-                };
-
-                return h('div', { className: 'map-popup-content' },
-                    h('strong', { className: 'service-name' }, city.name),
-                    h('button', { onClick: handleViewServices, className: 'popup-button mt-2' }, 'Ver Serviços Disponíveis')
-                );
-            };
-            
-            const root = ReactDOM.createRoot(popupNode);
-            root.render(h(PopupContent));
-
-            const newMarker = L.marker([city.lat, city.lng]).addTo(map);
-            newMarker.bindPopup(popupNode).openPopup();
-            
-            selectedCityMarkerRef.current = newMarker;
         };
     
         const handleLocateUser = () => {
@@ -1610,7 +1469,7 @@ Forneça a sua resposta estritamente no formato JSON, seguindo o schema fornecid
                         h('ul', { className: "space-y-2" },
                             h('li', null, h('a', { href: "#quem-somos", className: "hover:text-blue-400 transition-colors" }, "Quem Somos")),
                             h('li', null, h('a', { href: "#serviços", className: "hover:text-blue-400 transition-colors" }, "Serviços")),
-                            h('li', null, h('a', { href: "#planos", className: "hover:text-blue-400 transition-colors" }, "Registo de Profissional")),
+                            h('li', null, h('a', { href: "#pedir-orcamento", className: "hover:text-blue-400 transition-colors" }, "Registo de Profissional")),
                             h('li', null, h('a', { href: "#", className: "hover:text-blue-400 transition-colors" }, "Termos e Condições"))
                         )
                     ),
@@ -1638,8 +1497,8 @@ Forneça a sua resposta estritamente no formato JSON, seguindo o schema fornecid
         const [isRegistrationModalOpen, setRegistrationModalOpen] = useState(false);
         const [isLoginModalOpen, setLoginModalOpen] = useState(false);
         const [isProviderProfileModalOpen, setProviderProfileModalOpen] = useState(false);
-        const [preselectedCategory, setPreselectedCategory] = useState('');
-        const [selectedZoneFromMap, setSelectedZoneFromMap] = useState('');
+
+        const [preselectedService, setPreselectedService] = useState('');
 
         useEffect(() => {
           const savedTheme = localStorage.getItem('theme') || 'dark';
@@ -1655,6 +1514,7 @@ Forneça a sua resposta estritamente no formato JSON, seguindo o schema fornecid
           localStorage.setItem('theme', theme);
         }, [theme]);
         
+        // Effect to trigger provider profile modal on first login
         useEffect(() => {
           if (currentUser && currentUser.type === 'provider' && !currentUser.profileComplete) {
             setProviderProfileModalOpen(true);
@@ -1674,9 +1534,13 @@ Forneça a sua resposta estritamente no formato JSON, seguindo o schema fornecid
           setCurrentUser(prev => ({ ...prev, ...profileData, profileComplete: true }));
           console.log("Provider profile saved:", profileData);
         };
-        
-        const handleCategorySelection = (categoryName) => {
-            setPreselectedCategory(categoryName);
+
+        const handleServiceSelection = (serviceName) => {
+            setPreselectedService(serviceName);
+        };
+
+        const handleFormInteraction = () => {
+            setPreselectedService('');
         };
 
         return h('div', { className: "bg-stone-100 dark:bg-slate-900 text-stone-800 dark:text-stone-200 min-h-screen font-sans transition-colors duration-300" },
@@ -1690,25 +1554,19 @@ Forneça a sua resposta estritamente no formato JSON, seguindo o schema fornecid
           }),
           h('main', null,
             h(Hero),
-            h(ServiceCategories, { onServiceSelect: handleCategorySelection }),
+            h(ServiceCategories, { onServiceSelect: handleServiceSelection }),
             h(HowItWorks),
             h(PriceSimulator),
-            h(ProviderListings, { 
-              preselectedCategory: preselectedCategory, 
-              onCategoryClear: () => setPreselectedCategory(''),
-              selectedZoneFromMap: selectedZoneFromMap,
-              onZoneClear: () => setSelectedZoneFromMap('')
-            }),
+            h(ProviderListings),
             h(QuoteRequest, { 
-              preselectedService: '', 
-              onFormInteracted: () => {},
+              preselectedService: preselectedService, 
+              onFormInteracted: handleFormInteraction,
               currentUser: currentUser,
               onLoginPrompt: () => setLoginModalOpen(true)
             }),
             h(Testimonials),
-            h(AdBanner, { onRegisterClick: () => setRegistrationModalOpen(true) }),
-            h(PricingPlans, { onRegisterClick: () => setRegistrationModalOpen(true) }),
-            h(MapSection, { onCitySelect: setSelectedZoneFromMap }),
+            h(AdBanner),
+            h(MapSection),
             h(AboutUs)
           ),
           h(Footer),
