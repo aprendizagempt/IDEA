@@ -1675,7 +1675,14 @@ Response schema: { estimated_cost_min: number, estimated_cost_max: number, curre
                     h('div', null,
                         h('h4', { className: "font-semibold text-white mb-4" }, "Contactos"),
                         h('ul', { className: "space-y-2 text-slate-400" },
-                            h('li', { className: "flex items-start" }, h('span', { className: "font-semibold text-slate-200 mr-2" }, "Endereço:"), h('span', null, "Rua Chao do Bacelo N°4, 3505-563 Viseu, Portugal")),
+                            h('li', { className: "flex items-start" },
+  h('span', { className: "font-semibold text-slate-200 mr-2" }, "Endereço:"),
+  h('span', null,
+    h('div', null, "Rua Chão do Bacelo 4"),
+    h('div', null, "3505-563 Viseu"),
+    h('div', null, "Portugal"),
+  )
+),
                             h('li', { className: "flex items-start" }, h('span', { className: "font-semibold text-slate-200 mr-2" }, "Apoio:"), h('a', { href: "mailto:apoio@idea.pt", className: "hover:text-blue-400" }, "apoio@idea.pt")),
                             h('li', { className: "flex items-start" }, h('span', { className: "font-semibold text-slate-200 mr-2" }, "Telefone:"), h('a', { href: "tel:+351 91 501 29 44", className: "hover:text-blue-400" }, "+351 91 501 29 44"))
                         )
@@ -1787,3 +1794,4 @@ Response schema: { estimated_cost_min: number, estimated_cost_max: number, curre
     </script>
   </body>
 </html>
+
