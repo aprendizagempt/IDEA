@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-PT" class="dark">
   <head>
@@ -150,7 +149,7 @@
   <body class="bg-stone-100 dark:bg-slate-900">
     <div id="root"></div>
     <script type="module">
-      import React, { useState, useEffect, useMemo, useCallback, useRef } from 'react';
+      import React, { useState, useEffect, useMemo, useCallback, useRef, createContext, useContext } from 'react';
       import ReactDOM from 'react-dom/client';
       import { GoogleGenAI, Type } from "@google/genai";
 
@@ -162,6 +161,187 @@
 
       // --- HELPER DE CRIAÇÃO DE ELEMENTOS ---
       const h = React.createElement;
+
+      // --- TRADUÇÕES E I18N ---
+      const LANGUAGES = {
+        pt: { label: "PT", name: "Português", flag: "🇵🇹" },
+        en: { label: "EN", name: "English", flag: "🇬🇧" },
+        de: { label: "DE", name: "Deutsch", flag: "🇩🇪" },
+        fr: { label: "FR", name: "Français", flag: "🇫🇷" },
+        cn: { label: "CN", name: "中文", flag: "🇨🇳" },
+        in: { label: "IN", name: "हिन्दी", flag: "🇮🇳" },
+        es: { label: "ES", name: "Español", flag: "🇪🇸" },
+        it: { label: "IT", name: "Italiano", flag: "🇮🇹" },
+        nl: { label: "NL", name: "Nederlands", flag: "🇳🇱" },
+        ru: { label: "RU", name: "Русский", flag: "🇷🇺" }
+      };
+
+      const TRANSLATIONS = {
+        pt: {
+          nav_about: "Quem Somos",
+          nav_what_we_do: "O Que Fazemos",
+          nav_how: "Como Funciona",
+          nav_contact: "Contactos",
+          hero_title_1: "A solução para os seus problemas,",
+          hero_title_2: "agora",
+          hero_subtitle: "Encontre profissionais qualificados para qualquer serviço, a qualquer hora.",
+          search_btn: "Procurar",
+          quote_btn: "Orçamento Grátis",
+          login: "Login",
+          register: "Registar",
+          welcome: "Bem-vindo",
+          logout: "Sair"
+        },
+        en: {
+          nav_about: "About Us",
+          nav_what_we_do: "What We Do",
+          nav_how: "How It Works",
+          nav_contact: "Contacts",
+          hero_title_1: "The solution to your problems,",
+          hero_title_2: "now",
+          hero_subtitle: "Find qualified professionals for any service, anytime.",
+          search_btn: "Search",
+          quote_btn: "Free Quote",
+          login: "Login",
+          register: "Register",
+          welcome: "Welcome",
+          logout: "Logout"
+        },
+        de: {
+          nav_about: "Über Uns",
+          nav_what_we_do: "Was Wir Tun",
+          nav_how: "Wie es Funktioniert",
+          nav_contact: "Kontakte",
+          hero_title_1: "Die Lösung für Ihre Probleme,",
+          hero_title_2: "jetzt",
+          hero_subtitle: "Finden Sie qualifizierte Fachleute für jeden Service, jederzeit.",
+          search_btn: "Suchen",
+          quote_btn: "Kostenloses Angebot",
+          login: "Anmelden",
+          register: "Registrieren",
+          welcome: "Willkommen",
+          logout: "Abmelden"
+        },
+        fr: {
+          nav_about: "Qui Sommes-Nous",
+          nav_what_we_do: "Ce Que Nous Faisons",
+          nav_how: "Comment Ça Marche",
+          nav_contact: "Contacts",
+          hero_title_1: "La solution à vos problèmes,",
+          hero_title_2: "maintenant",
+          hero_subtitle: "Trouvez des professionnels qualifiés pour tout service, à tout moment.",
+          search_btn: "Rechercher",
+          quote_btn: "Devis Gratuit",
+          login: "Connexion",
+          register: "S'inscrire",
+          welcome: "Bienvenue",
+          logout: "Déconnexion"
+        },
+        cn: {
+          nav_about: "关于我们",
+          nav_what_we_do: "我们做什么",
+          nav_how: "如何运作",
+          nav_contact: "联系方式",
+          hero_title_1: "解决您的问题，",
+          hero_title_2: "现在",
+          hero_subtitle: "随时寻找任何服务的合格专业人员。",
+          search_btn: "搜索",
+          quote_btn: "免费报价",
+          login: "登录",
+          register: "注册",
+          welcome: "欢迎",
+          logout: "登出"
+        },
+        in: {
+          nav_about: "हमारे बारे में",
+          nav_what_we_do: "हम क्या करते हैं",
+          nav_how: "यह कैसे काम करता है",
+          nav_contact: "संपर्क",
+          hero_title_1: "आपकी समस्याओं का समाधान,",
+          hero_title_2: "अभी",
+          hero_subtitle: "किसी भी सेवा के लिए योग्य पेशेवर खोजें, कभी भी।",
+          search_btn: "खोज",
+          quote_btn: "मुफ्त उद्धरण",
+          login: "लॉग इन",
+          register: "रजिस्टर",
+          welcome: "स्वागत है",
+          logout: "लॉग आउट"
+        },
+        es: {
+          nav_about: "Quiénes Somos",
+          nav_what_we_do: "Qué Hacemos",
+          nav_how: "Cómo Funciona",
+          nav_contact: "Contactos",
+          hero_title_1: "La solución a sus problemas,",
+          hero_title_2: "ahora",
+          hero_subtitle: "Encuentre profesionales calificados para cualquier servicio, en cualquier momento.",
+          search_btn: "Buscar",
+          quote_btn: "Presupuesto Gratis",
+          login: "Acceso",
+          register: "Registro",
+          welcome: "Bienvenido",
+          logout: "Salir"
+        },
+        it: {
+          nav_about: "Chi Siamo",
+          nav_what_we_do: "Cosa Facciamo",
+          nav_how: "Come Funziona",
+          nav_contact: "Contatti",
+          hero_title_1: "La soluzione ai tuoi problemi,",
+          hero_title_2: "ora",
+          hero_subtitle: "Trova professionisti qualificati per qualsiasi servizio, in qualsiasi momento.",
+          search_btn: "Cerca",
+          quote_btn: "Preventivo Gratuito",
+          login: "Accedi",
+          register: "Registrati",
+          welcome: "Benvenuto",
+          logout: "Esci"
+        },
+        nl: {
+          nav_about: "Over Ons",
+          nav_what_we_do: "Wat We Doen",
+          nav_how: "Hoe Het Werkt",
+          nav_contact: "Contacten",
+          hero_title_1: "De oplossing voor uw problemen,",
+          hero_title_2: "nu",
+          hero_subtitle: "Vind gekwalificeerde professionals voor elke service, op elk moment.",
+          search_btn: "Zoeken",
+          quote_btn: "Gratis Offerte",
+          login: "Inloggen",
+          register: "Registreren",
+          welcome: "Welkom",
+          logout: "Uitloggen"
+        },
+        ru: {
+          nav_about: "О нас",
+          nav_what_we_do: "Что мы делаем",
+          nav_how: "Как это работает",
+          nav_contact: "Контакты",
+          hero_title_1: "Решение ваших проблем,",
+          hero_title_2: "сейчас",
+          hero_subtitle: "Найдите квалифицированных специалистов для любой услуги в любое время.",
+          search_btn: "Поиск",
+          quote_btn: "Бесплатная смета",
+          login: "Вход",
+          register: "Регистрация",
+          welcome: "Добро пожаловать",
+          logout: "Выйти"
+        }
+      };
+
+      const LanguageContext = createContext();
+
+      const LanguageProvider = ({ children }) => {
+        const [language, setLanguage] = useState('pt');
+        
+        const t = (key) => {
+          return TRANSLATIONS[language]?.[key] || TRANSLATIONS['pt'][key] || key;
+        };
+
+        return h(LanguageContext.Provider, { value: { language, setLanguage, t } }, children);
+      };
+
+      const useTranslation = () => useContext(LanguageContext);
 
       // --- ÍCONES ---
       const WrenchScrewdriverIcon = (props) => h('svg', { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", fill: "currentColor", ...props }, h('path', { fillRule: "evenodd", d: "M12 6.75a5.25 5.25 0 0 1 5.25 5.25c0 2.42-1.62 4.492-3.841 5.133a5.973 5.973 0 0 1-1.41.167H12A5.973 5.973 0 0 1 6 12c0-3.314 2.686-6 6-6zm.94-1.902a6.717 6.717 0 0 1 1.06 0 1.5 1.5 0 0 1 1.415 1.415 6.718 6.718 0 0 1 0 1.06 1.5 1.5 0 0 1-1.415 1.415 6.717 6.717 0 0 1-1.06 0 1.5 1.5 0 0 1-1.415-1.415 6.718 6.718 0 0 1 0-1.06A1.5 1.5 0 0 1 12.94 4.848zM12 1.5a10.5 10.5 0 1 0 0 21 10.5 10.5 0 0 0 0-21zM9.335 15.632a.75.75 0 0 1 .434 1.312l-2.368 1.184a.75.75 0 0 1-.98-.98l1.184-2.368a.75.75 0 0 1 1.312.434 2.459 2.459 0 0 0 .39 1.14 2.459 2.459 0 0 0 1.028.628z", clipRule: "evenodd" }));
@@ -176,7 +356,7 @@
       const BoltIcon = (props) => h('svg', { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 20 20", fill: "currentColor", ...props }, h('path', { d: "m3.182 17.818 13.636-13.636a1 1 0 0 0-1.414-1.414L1.768 16.404a1 1 0 0 0 1.414 1.414ZM2.5 10a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5Zm8 3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5Zm-5-11a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5Z" }));
       const CheckBadgeIcon = (props) => h('svg', { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 20 20", fill: "currentColor", ...props }, h('path', { fillRule: "evenodd", d: "M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z", clipRule: "evenodd" }));
       const CreditCardIcon = (props) => h('svg', { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 20 20", fill: "currentColor", ...props }, h('path', { d: "M2.5 4.5a3 3 0 0 0-3 3v5a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3v-5a3 3 0 0 0-3-3h-15Z" }), h('path', { d: "M2.5 6.5a1 1 0 0 0-1 1v1.5a1.5 1.5 0 0 0 1.5 1.5h15a1.5 1.5 0 0 0 1.5-1.5v-1.5a1 1 0 0 0-1-1h-15Z" }));
-      const GlobeAltIcon = (props) => h('svg', { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 20 20", fill: "currentColor", ...props }, h('path', { d: "M10 2a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0v-1.5A.75.75 0 0 1 10 2Z" }), h('path', { fillRule: "evenodd", d: "M10 20a10 10 0 1 0 0-20 10 10 0 0 0 0 20ZM9.25 4.75a.75.75 0 0 0-1.5 0v1.5a.75.75 0 0 0 1.5 0v-1.5ZM5.636 6.364a.75.75 0 0 0-1.06-1.06l-1.061 1.06a.75.75 0 0 0 1.06 1.06l1.06-1.06ZM3.75 9.25a.75.75 0 0 0 0 1.5h1.5a.75.75 0 0 0 0-1.5h-1.5Zm1.886 3.94a.75.75 0 0 0-1.06 1.06l1.06 1.061a.75.75 0 0 0 1.06-1.06l-1.06-1.061Zm4.614 3.06a.75.75 0 0 0 0-1.5v-1.5a.75.75 0 0 0-1.5 0v1.5a.75.75 0 0 0 1.5 0ZM13.636 14.364a.75.75 0 0 0 1.06 1.06l1.061-1.06a.75.75 0 0 0-1.06-1.06l-1.06 1.061Zm2.614-3.114a.75.75 0 0 0 0-1.5h-1.5a.75.75 0 0 0 0 1.5h1.5Zm-1.886-3.94a.75.75 0 0 0 1.06-1.06l-1.06-1.061a.75.75 0 0 0-1.06 1.06l1.06 1.061Zm-4.614-3.06a.75.75 0 0 0 0 1.5v1.5a.75.75 0 0 0 1.5 0v-1.5a.75.75 0 0 0-1.5 0Z", clipRule: "evenodd" }));
+      const GlobeAltIcon = (props) => h('svg', { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 20 20", fill: "currentColor", ...props }, h('path', { d: "M10 2a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0v-1.5A.75.75 0 0 1 10 2Z" }), h('path', { fillRule: "evenodd", d: "M10 20a10 10 0 1 0 0-20 10 10 0 0 0 0 20ZM9.25 4.75a.75.75 0 0 0-1.5 0v1.5a.75.75 0 0 0 1.5 0v-1.5ZM5.636 6.364a.75.75 0 0 0-1.06-1.06l-1.061 1.06a.75.75 0 0 0 1.06 1.06l1.06-1.06ZM3.75 9.25a.75.75 0 0 0 0 1.5h1.5a.75.75 0 0 0 0-1.5h-1.5Zm1.886 3.94a.75.75 0 0 0-1.06 1.06l1.06 1.061a.75.75 0 0 0 1.06-1.06l-1.06-1.061Zm4.614 3.06a.75.75 0 0 0 0-1.5v-1.5a.75.75 0 0 0-1.5 0v1.5a.75.75 0 0 0 1.5 0ZM13.636 14.364a.75.75 0 0 0 1.06 1.06l1.061-1.06a.75.75 0 0 0-1.06-1.06l-1.06 1.061Zm2.614-3.114a.75.75 0 0 0 0-1.5h-1.5a.75.75 0 0 0 0 1.5h1.5Zm-1.886-3.94a.75.75 0 0 0 1.06-1.06l-1.06-1.061a.75.75 0 0 0-1.06 1.06l1.06 1.061Zm-4.614-3.06a.75.75 0 0 0 0 1.5v1.5a.75.75 0 0 0-1.5 0v-1.5a.75.75 0 0 0-1.5 0Z", clipRule: "evenodd" }));
       const StarIcon = (props) => h('svg', { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 20 20", fill: "currentColor", ...props }, h('path', { fillRule: "evenodd", d: "M10.868 2.884c.321-.662 1.215-.662 1.536 0l1.82 3.755 4.137.602c.73.106 1.022.992.494 1.503l-2.994 2.918.707 4.12c.125.726-.638 1.282-1.296.953L10 15.175l-3.705 1.948c-.658.33-1.422-.227-1.296-.953l.707-4.12-2.994-2.918c-.528-.51-.236-1.397.494-1.503l4.137-.602 1.82-3.755Z", clipRule: "evenodd" }));
       const Spinner = () => h('div', { className: "animate-spin rounded-full h-8 w-8 border-b-2 border-white mx-auto" });
       const LocationMarkerIcon = (props) => h('svg', { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 20 20", fill: "currentColor", ...props }, h('path', { fillRule: "evenodd", d: "M9.69 18.933l.003.001C9.89 19.02 10 19 10 19s.11.02.308-.066l.002-.001.006-.003.018-.008a5.741 5.741 0 00.281-.14c.186-.1.4-.223.654-.369.255-.146.554-.315.856-.5.302-.185.623-.39 1.01-.634.387-.244.86-.546 1.445-1.011a8.87 8.87 0 002.42-3.86C17.947 8.822 18 8.434 18 8a8 8 0 10-16 0c0 .434.053.822.146 1.194a8.87 8.87 0 002.42 3.86c.584.465 1.058.767 1.445 1.01.387.245.708.45 1.01.635.302.185.6.354.856.5.254.146.468.269.654.369a5.741 5.741 0 00.281.14l.018.008.006.003zM10 11.25a3.25 3.25 0 100-6.5 3.25 3.25 0 000 6.5z", clipRule: "evenodd" }));
@@ -300,14 +480,16 @@
 
 
       // --- SERVIÇO GEMINI API ---
-      const getAiEstimate = async (formData) => {
+      const getAiEstimate = async (formData, language) => {
         const ai = new GoogleGenAI({ apiKey: API_KEY });
-        const prompt = `Age como um estimador de custos para serviços em Portugal. Com base nos seguintes detalhes, forneça uma estimativa de preço em Euros.
-- Tipo de Serviço: ${formData.service}
-- Urgência: ${formData.urgency} (${formData.urgency === 'urgente' ? 'taxa de urgência pode ser aplicada' : 'agendamento normal'})
-- Localização (cidade/região): ${formData.location}
-- Descrição do Trabalho: ${formData.description}
-Forneça a sua resposta estritamente no formato JSON, seguindo o schema fornecido. O custo deve ser um intervalo (mínimo e máximo). A desagregação deve incluir itens como 'Mão de obra', 'Materiais (se aplicável)', 'Deslocação', 'Taxa de Urgência (se aplicável)'. As notas devem incluir quaisquer suposições que fez.`;
+        const prompt = `Act as a cost estimator for services. Language of response: ${language}.
+Details:
+- Service: ${formData.service}
+- Urgency: ${formData.urgency}
+- Location: ${formData.location}
+- Description: ${formData.description}
+Provide response strictly in JSON format. Cost should be a range (min/max). Currency based on location (EUR default).
+Response schema: { estimated_cost_min: number, estimated_cost_max: number, currency: string, breakdown: [{ item: string, cost: string }], notes: string }`;
 
         try {
             const response = await ai.models.generateContent({
@@ -797,9 +979,15 @@ Forneça a sua resposta estritamente no formato JSON, seguindo o schema fornecid
       // --- COMPONENTES PRINCIPAIS DA PÁGINA ---
       
       const Header = ({ theme, toggleTheme, onRegisterClick, onLoginClick, onLogout, currentUser }) => {
+        const { t, language, setLanguage } = useTranslation();
+        
         const navLinks = [
-          { name: 'Quem Somos', href: '#quem-somos' }, { name: 'Serviços', href: '#serviços' }, { name: 'Como Funciona', href: '#como-funciona' }, { name: 'Contactos', href: '#contactos' },
+          { name: t('nav_about'), href: '#quem-somos' }, 
+          { name: t('nav_what_we_do'), href: '#serviços' },
+          { name: t('nav_how'), href: '#como-funciona' },
+          { name: t('nav_contact'), href: '#contactos' },
         ];
+
         return h('header', { className: "sticky top-0 z-40 bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm shadow-md" },
           h('div', { className: "container mx-auto px-4 sm:px-6 lg:px-8" },
             h('div', { className: "flex items-center justify-between h-20" },
@@ -808,18 +996,27 @@ Forneça a sua resposta estritamente no formato JSON, seguindo o schema fornecid
                 h('p', { className: "hidden md:block text-sm text-stone-500 dark:text-stone-400 mt-1" }, "Serviços de Urgência 24/7")
               ),
               h('nav', { className: "hidden lg:flex items-center space-x-8" },
-                navLinks.map(link => h('a', { key: link.name, href: link.href, className: "text-stone-600 dark:text-stone-300 hover:text-blue-600 dark:hover:text-blue-500 transition-colors font-medium" }, link.name))
+                navLinks.map(link => h('a', { key: link.name, href: link.href, className: "text-stone-600 dark:text-stone-300 hover:text-blue-600 dark:hover:text-blue-500 transition-colors font-medium text-sm uppercase tracking-wide" }, link.name))
               ),
               h('div', { className: "flex items-center space-x-4" },
+                 h('select', { 
+                    value: language, 
+                    onChange: (e) => setLanguage(e.target.value),
+                    className: "bg-transparent border border-stone-300 dark:border-slate-700 rounded-md text-sm p-1 text-stone-800 dark:text-stone-200 focus:outline-none focus:ring-1 focus:ring-blue-500 cursor-pointer"
+                  },
+                  Object.entries(LANGUAGES).map(([code, lang]) => 
+                    h('option', { key: code, value: code, className: "text-black bg-white" }, `${lang.flag} ${code.toUpperCase()}`)
+                  )
+                ),
                 currentUser ? (
                     h('div', { className: "flex items-center space-x-4" },
-                        h('span', { className: 'text-sm font-medium hidden sm:inline' }, `Bem-vindo, ${currentUser.type === 'client' ? currentUser.name : currentUser.id}`),
-                        h('button', { onClick: onLogout, className: "bg-stone-200 dark:bg-slate-700 text-stone-800 dark:text-stone-200 px-4 py-2 rounded-md font-semibold hover:bg-stone-300 dark:hover:bg-slate-600 transition-colors text-sm" }, "Logout")
+                        h('span', { className: 'text-sm font-medium hidden sm:inline' }, `${t('welcome')}, ${currentUser.type === 'client' ? currentUser.name : currentUser.id}`),
+                        h('button', { onClick: onLogout, className: "bg-stone-200 dark:bg-slate-700 text-stone-800 dark:text-stone-200 px-4 py-2 rounded-md font-semibold hover:bg-stone-300 dark:hover:bg-slate-600 transition-colors text-sm" }, t('logout'))
                     )
                 ) : (
                     h(React.Fragment, null,
-                        h('button', { onClick: onLoginClick, className: "hidden sm:inline-block text-stone-600 dark:text-stone-300 hover:text-blue-600 dark:hover:text-blue-500 transition-colors font-semibold text-sm" }, "Login"),
-                        h('button', { onClick: onRegisterClick, className: "hidden sm:inline-block bg-blue-600 text-white px-4 py-2 rounded-md font-semibold hover:bg-blue-700 transition-colors text-sm" }, "Registar")
+                        h('button', { onClick: onLoginClick, className: "hidden sm:inline-block text-stone-600 dark:text-stone-300 hover:text-blue-600 dark:hover:text-blue-500 transition-colors font-semibold text-sm" }, t('login')),
+                        h('button', { onClick: onRegisterClick, className: "hidden sm:inline-block bg-blue-600 text-white px-4 py-2 rounded-md font-semibold hover:bg-blue-700 transition-colors text-sm" }, t('register'))
                     )
                 ),
                 h('button', { onClick: toggleTheme, className: "p-2 rounded-full text-stone-500 dark:text-stone-400 hover:bg-stone-200 dark:hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 dark:focus:ring-offset-slate-900", 'aria-label': "Toggle theme" },
@@ -832,6 +1029,7 @@ Forneça a sua resposta estritamente no formato JSON, seguindo o schema fornecid
       };
 
       const Hero = () => {
+        const { t } = useTranslation();
         const features = [
           { text: 'Resposta em minutos', icon: h(BoltIcon, { className: "w-5 h-5 text-blue-500" }) },
           { text: 'Profissionais verificados', icon: h(CheckBadgeIcon, { className: "w-5 h-5 text-blue-500" }) },
@@ -842,10 +1040,10 @@ Forneça a sua resposta estritamente no formato JSON, seguindo o schema fornecid
             h('div', { className: "absolute inset-0 bg-cover bg-center bg-[url('https://picsum.photos/seed/lisbon/1920/1080')] opacity-10 dark:opacity-5" }),
             h('div', { className: "container mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10" },
                 h('h1', { className: "text-4xl md:text-5xl lg:text-6xl font-bold text-stone-900 dark:text-white leading-tight mb-4" },
-                    "A solução para os seus problemas, ", h('span', { className: "text-blue-600 dark:text-blue-500" }, "agora"), "."
+                    t('hero_title_1'), h('span', { className: "text-blue-600 dark:text-blue-500" }, t('hero_title_2')), "."
                 ),
                 h('p', { className: "max-w-3xl mx-auto text-lg text-stone-600 dark:text-stone-300 mb-8" },
-                    "Encontre profissionais qualificados para qualquer serviço, a qualquer hora. Desde uma reparação urgente a um projeto planeado."
+                    t('hero_subtitle')
                 ),
                 h('div', { className: "max-w-4xl mx-auto bg-white dark:bg-slate-800 p-4 rounded-lg shadow-lg flex flex-col md:flex-row items-center gap-4" },
                     h('div', { className: "relative flex-grow w-full" },
@@ -853,8 +1051,8 @@ Forneça a sua resposta estritamente no formato JSON, seguindo o schema fornecid
                         h('input', { type: "text", placeholder: "Qual serviço precisa? Ex: 'eletricista'", className: "w-full pl-10 pr-4 py-3 border-2 border-transparent focus:border-blue-500 bg-stone-100 dark:bg-slate-700 rounded-md focus:outline-none transition" })
                     ),
                     h('div', { className: "flex items-center gap-2 w-full md:w-auto" },
-                        h('a', { href: "#pedir-orcamento", className: "bg-blue-600 text-white font-semibold px-8 py-3 rounded-md hover:bg-blue-700 transition-transform hover:scale-105 w-full md:w-auto" }, "Procurar"),
-                        h('a', { href: "#pedir-orcamento", className: "bg-stone-200 dark:bg-slate-700 font-semibold px-8 py-3 rounded-md hover:bg-stone-300 dark:hover:bg-slate-600 transition-transform hover:scale-105 w-full md:w-auto" }, "Orçamento Grátis")
+                        h('a', { href: "#pedir-orcamento", className: "bg-blue-600 text-white font-semibold px-8 py-3 rounded-md hover:bg-blue-700 transition-transform hover:scale-105 w-full md:w-auto" }, t('search_btn')),
+                        h('a', { href: "#pedir-orcamento", className: "bg-stone-200 dark:bg-slate-700 font-semibold px-8 py-3 rounded-md hover:bg-stone-300 dark:hover:bg-slate-600 transition-transform hover:scale-105 w-full md:w-auto" }, t('quote_btn'))
                     )
                 ),
                 h('div', { className: "mt-8 flex flex-wrap justify-center items-center gap-x-6 gap-y-2" },
@@ -1090,6 +1288,7 @@ Forneça a sua resposta estritamente no formato JSON, seguindo o schema fornecid
       };
 
       const QuoteRequest = ({ preselectedService, onFormInteracted, currentUser, onLoginPrompt }) => {
+          const { t, language } = useTranslation();
           const [formData, setFormData] = useState({ service: '', urgency: 'normal', description: '', location: '' });
           const [estimate, setEstimate] = useState(null);
           const [loading, setLoading] = useState(false);
@@ -1133,7 +1332,7 @@ Forneça a sua resposta estritamente no formato JSON, seguindo o schema fornecid
               }
 
               try {
-                  const result = await getAiEstimate(formData);
+                  const result = await getAiEstimate(formData, language);
                   setEstimate(result);
               } catch (err) {
                   setError(err.message || "Não foi possível obter uma estimativa. Por favor, tente novamente mais tarde.");
@@ -1476,9 +1675,9 @@ Forneça a sua resposta estritamente no formato JSON, seguindo o schema fornecid
                     h('div', null,
                         h('h4', { className: "font-semibold text-white mb-4" }, "Contactos"),
                         h('ul', { className: "space-y-2 text-slate-400" },
-                            h('li', { className: "flex items-start" }, h('span', { className: "font-semibold text-slate-200 mr-2" }, "Endereço:"), h('span', null, "Avenida da Liberdade, Lisboa, Portugal")),
+                            h('li', { className: "flex items-start" }, h('span', { className: "font-semibold text-slate-200 mr-2" }, "Endereço:"), h('span', null, "Rua Chao do Bacelo N°4, 3505-563 Viseu, Portugal")),
                             h('li', { className: "flex items-start" }, h('span', { className: "font-semibold text-slate-200 mr-2" }, "Apoio:"), h('a', { href: "mailto:apoio@idea.pt", className: "hover:text-blue-400" }, "apoio@idea.pt")),
-                            h('li', { className: "flex items-start" }, h('span', { className: "font-semibold text-slate-200 mr-2" }, "Telefone:"), h('a', { href: "tel:+351210123456", className: "hover:text-blue-400" }, "+351 210 123 456"))
+                            h('li', { className: "flex items-start" }, h('span', { className: "font-semibold text-slate-200 mr-2" }, "Telefone:"), h('a', { href: "tel:+351 91 501 29 44", className: "hover:text-blue-400" }, "+351 91 501 29 44"))
                         )
                     )
                 ),
@@ -1543,7 +1742,7 @@ Forneça a sua resposta estritamente no formato JSON, seguindo o schema fornecid
             setPreselectedService('');
         };
 
-        return h('div', { className: "bg-stone-100 dark:bg-slate-900 text-stone-800 dark:text-stone-200 min-h-screen font-sans transition-colors duration-300" },
+        return h(LanguageProvider, null, h('div', { className: "bg-stone-100 dark:bg-slate-900 text-stone-800 dark:text-stone-200 min-h-screen font-sans transition-colors duration-300" },
           h(Header, { 
             theme: theme, 
             toggleTheme: toggleTheme, 
@@ -1573,7 +1772,7 @@ Forneça a sua resposta estritamente no formato JSON, seguindo o schema fornecid
           h(RegistrationModal, { isOpen: isRegistrationModalOpen, onClose: () => setRegistrationModalOpen(false) }),
           h(LoginModal, { isOpen: isLoginModalOpen, onClose: () => setLoginModalOpen(false), onLogin: handleLogin }),
           h(ProviderProfileModal, { isOpen: isProviderProfileModalOpen, onClose: () => setProviderProfileModalOpen(false), onSave: handleSaveProfile })
-        );
+        ));
       };
 
       // --- INICIALIZAÇÃO DO REACT ---
